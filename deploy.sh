@@ -18,19 +18,7 @@ print_message() {
     echo -e "${color}${message}${NC}"
 }
 
-# Check if Azure CLI is installed
-if ! command -v az &> /dev/null; then
-    print_message "$RED" "Error: Azure CLI is not installed. Please install it from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli"
-    exit 1
-fi
-
-# Check if user is logged in
-if ! az account show &> /dev/null; then
-    print_message "$YELLOW" "You are not logged in to Azure. Please login..."
-    az login
-fi
-
-# Parse command line arguments
+# Parse command line arguments first (so help can be shown without Azure CLI)
 TEMPLATE_FILE=""
 PARAMETERS_FILE=""
 RESOURCE_GROUP=""
@@ -72,6 +60,18 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
+
+# Check if Azure CLI is installed
+if ! command -v az &> /dev/null; then
+    print_message "$RED" "Error: Azure CLI is not installed. Please install it from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli"
+    exit 1
+fi
+
+# Check if user is logged in
+if ! az account show &> /dev/null; then
+    print_message "$YELLOW" "You are not logged in to Azure. Please login..."
+    az login
+fi
 
 # Validate required parameters
 if [ -z "$TEMPLATE_FILE" ] || [ -z "$PARAMETERS_FILE" ] || [ -z "$RESOURCE_GROUP" ]; then

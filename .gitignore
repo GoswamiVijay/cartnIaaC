@@ -1,0 +1,27 @@
+# Azure deployment outputs
+*.deploymentoutput.json
+
+# Local parameters files (may contain sensitive data)
+*.local.parameters.json
+
+# Azure credentials
+.azure/
+*.publishsettings
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

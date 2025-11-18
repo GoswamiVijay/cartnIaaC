@@ -1,0 +1,65 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/disks/vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/disks/vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+  "ResourceName": "vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+  "Name": "vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "osType": "Windows",
+    "hyperVGeneration": "V2",
+    "supportsHibernation": true,
+    "supportedCapabilities": {
+      "diskControllerTypes": "SCSI, NVMe",
+      "acceleratedNetwork": true,
+      "architecture": "x64"
+    },
+    "creationData": {
+      "createOption": "FromImage",
+      "imageReference": {
+        "id": "/Subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/Providers/Microsoft.Compute/Locations/eastus2/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2022-datacenter-azure-edition-hotpatch/Versions/20348.4297.251024"
+      }
+    },
+    "diskSizeGB": 127,
+    "diskIOPSReadWrite": 500,
+    "diskMBpsReadWrite": 100,
+    "encryption": {
+      "type": "EncryptionAtRestWithPlatformKey"
+    },
+    "networkAccessPolicy": "AllowAll",
+    "securityProfile": {
+      "securityType": "TrustedLaunch"
+    },
+    "publicNetworkAccess": "Enabled",
+    "timeCreated": "2025-11-06T22:34:46.4706561Z",
+    "provisioningState": "Succeeded",
+    "diskState": "Reserved",
+    "LastOwnershipUpdateTime": "2025-11-10T21:36:23.462417Z",
+    "diskSizeBytes": 136367308800,
+    "uniqueId": "9d91a8f1-4903-45d8-be50-04ada471c405",
+    "tier": "P10"
+  },
+  "ResourceGroupName": "RG-ID001",
+  "Type": "Microsoft.Compute/disks",
+  "ResourceType": "Microsoft.Compute/disks",
+  "ExtensionResourceType": null,
+  "Sku": {
+    "Name": "Premium_LRS",
+    "Tier": "Premium",
+    "Size": null,
+    "Family": null,
+    "Model": null,
+    "Capacity": null
+  },
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

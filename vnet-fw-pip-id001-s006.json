@@ -1,0 +1,43 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-fw-pip-id001-s006",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-fw-pip-id001-s006",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-fw-pip-id001-s006",
+  "Name": "vnet-fw-pip-id001-s006",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "2db4e89f-e25b-475a-bee8-731c4f447957",
+    "ipAddress": "20.7.18.171",
+    "publicIPAddressVersion": "IPv4",
+    "publicIPAllocationMethod": "Static",
+    "idleTimeoutInMinutes": 4,
+    "ipConfiguration": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004/azureFirewallIpConfigurations/ipConfig"
+    }
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/publicIPAddresses",
+  "ResourceType": "Microsoft.Network/publicIPAddresses",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environment": "production",
+    "customerid": "001",
+    "siteid": "001",
+    "ticketId": "001",
+    "approvalid": "001"
+  },
+  "TagsTable": "\nName         Value     \r\n===========  ==========\r\ncustomerid   001       \r\napprovalid   001       \r\ncustomer     DOS-CA    \r\nsiteid       001       \r\nsite         npc       \r\nenvironment  production\r\nticketId     001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

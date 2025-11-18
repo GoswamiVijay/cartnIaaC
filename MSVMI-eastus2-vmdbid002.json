@@ -1,0 +1,61 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMI-eastus2-vmdbid002",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMI-eastus2-vmdbid002",
+  "Identity": null,
+  "Kind": "Linux",
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "MSVMI-eastus2-vmdbid002",
+  "Name": "MSVMI-eastus2-vmdbid002",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "immutableId": "dcr-48d596ae95134ca1a7c469824686cb49",
+    "dataSources": {
+      "performanceCounters": [
+        {
+          "streams": [
+            "Microsoft-InsightsMetrics"
+          ],
+          "samplingFrequencyInSeconds": 60,
+          "counterSpecifiers": [
+            "\\VmInsights\\DetailedMetrics"
+          ],
+          "name": "Microsoft-InsightsMetrics"
+        }
+      ]
+    },
+    "destinations": {
+      "logAnalytics": [
+        {
+          "workspaceResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.operationalinsights/workspaces/law-id001-s110",
+          "workspaceId": "e10845f8-6d35-40fd-9f62-215bc60050f5",
+          "name": "vmInsightworkspace"
+        }
+      ]
+    },
+    "dataFlows": [
+      {
+        "streams": [
+          "Microsoft-InsightsMetrics"
+        ],
+        "destinations": [
+          "vmInsightworkspace"
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Insights/dataCollectionRules",
+  "ResourceType": "Microsoft.Insights/dataCollectionRules",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

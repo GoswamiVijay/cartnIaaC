@@ -1,0 +1,50 @@
+{
+  "ResourceId": "/subscriptions/B08E63B8-3E0B-4003-BA71-B4413106512A/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/Application Insights Smart Detection",
+  "Id": "/subscriptions/B08E63B8-3E0B-4003-BA71-B4413106512A/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/Application Insights Smart Detection",
+  "Identity": null,
+  "Kind": null,
+  "Location": "Global",
+  "ManagedBy": null,
+  "ResourceName": "Application Insights Smart Detection",
+  "Name": "Application Insights Smart Detection",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "groupShortName": "SmartDetect",
+    "enabled": true,
+    "emailReceivers": [],
+    "smsReceivers": [],
+    "webhookReceivers": [],
+    "eventHubReceivers": [],
+    "itsmReceivers": [],
+    "azureAppPushReceivers": [],
+    "automationRunbookReceivers": [],
+    "voiceReceivers": [],
+    "logicAppReceivers": [],
+    "azureFunctionReceivers": [],
+    "armRoleReceivers": [
+      {
+        "name": "Monitoring Contributor",
+        "roleId": "749f88d5-cbae-40b8-bcfc-e573ddc772fa",
+        "useCommonAlertSchema": true
+      },
+      {
+        "name": "Monitoring Reader",
+        "roleId": "43d0d8ad-25c7-4714-9337-8ba259a9fe05",
+        "useCommonAlertSchema": true
+      }
+    ]
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Insights/ActionGroups",
+  "ResourceType": "Microsoft.Insights/ActionGroups",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "B08E63B8-3E0B-4003-BA71-B4413106512A",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

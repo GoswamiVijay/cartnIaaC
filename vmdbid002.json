@@ -1,0 +1,104 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+  "Identity": {
+    "PrincipalId": "548fff0b-004e-48fd-8ada-6fc88d50e2ca",
+    "TenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+    "Type": "SystemAssigned",
+    "UserAssignedIdentities": null
+  },
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vmdbid002",
+  "Name": "vmdbid002",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "hardwareProfile": {
+      "vmSize": "Standard_E4s_v3"
+    },
+    "provisioningState": "Succeeded",
+    "vmId": "a7dc5ec8-946c-42c2-ad88-4bdbb99e0934",
+    "additionalCapabilities": {
+      "hibernationEnabled": false
+    },
+    "storageProfile": {
+      "imageReference": {
+        "publisher": "MicrosoftWindowsServer",
+        "offer": "WindowsServer",
+        "sku": "2022-datacenter-azure-edition-hotpatch",
+        "version": "latest",
+        "exactVersion": "20348.4297.251024"
+      },
+      "osDisk": {
+        "osType": "Windows",
+        "name": "vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+        "createOption": "FromImage",
+        "caching": "ReadWrite",
+        "managedDisk": {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/disks/vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405"
+        },
+        "deleteOption": "Delete"
+      },
+      "dataDisks": [],
+      "diskControllerType": "SCSI"
+    },
+    "osProfile": {
+      "computerName": "vmdbid002",
+      "adminUsername": "cartnadmin",
+      "windowsConfiguration": {
+        "provisionVMAgent": true,
+        "enableAutomaticUpdates": true,
+        "patchSettings": {
+          "patchMode": "AutomaticByPlatform",
+          "automaticByPlatformSettings": {
+            "rebootSetting": "IfRequired"
+          },
+          "assessmentMode": "ImageDefault",
+          "enableHotpatching": true
+        },
+        "enableVMAgentPlatformUpdates": true
+      },
+      "secrets": [],
+      "allowExtensionOperations": true,
+      "requireGuestProvisionSignal": true
+    },
+    "securityProfile": {
+      "uefiSettings": {
+        "secureBootEnabled": true,
+        "vTpmEnabled": true
+      },
+      "encryptionAtHost": true,
+      "securityType": "TrustedLaunch"
+    },
+    "networkProfile": {
+      "networkInterfaces": [
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/vmdbid002647_z1",
+          "properties": {
+            "deleteOption": "Detach"
+          }
+        }
+      ]
+    },
+    "diagnosticsProfile": {
+      "bootDiagnostics": {
+        "enabled": true
+      }
+    },
+    "timeCreated": "2025-11-06T22:34:44.8300403Z"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/virtualMachines",
+  "ResourceType": "Microsoft.Compute/virtualMachines",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

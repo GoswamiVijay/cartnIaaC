@@ -1,0 +1,46 @@
+{
+  "ResourceId": "/subscriptions/B08E63B8-3E0B-4003-BA71-B4413106512A/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/RecommendedAlertRules-AG-1",
+  "Id": "/subscriptions/B08E63B8-3E0B-4003-BA71-B4413106512A/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/RecommendedAlertRules-AG-1",
+  "Identity": null,
+  "Kind": null,
+  "Location": "Global",
+  "ManagedBy": null,
+  "ResourceName": "RecommendedAlertRules-AG-1",
+  "Name": "RecommendedAlertRules-AG-1",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "groupShortName": "recalert1",
+    "enabled": true,
+    "emailReceivers": [
+      {
+        "name": "Email0_-EmailAction-",
+        "emailAddress": "Vijay@xfinion.com",
+        "useCommonAlertSchema": true,
+        "status": "Enabled"
+      }
+    ],
+    "smsReceivers": [],
+    "webhookReceivers": [],
+    "eventHubReceivers": [],
+    "itsmReceivers": [],
+    "azureAppPushReceivers": [],
+    "automationRunbookReceivers": [],
+    "voiceReceivers": [],
+    "logicAppReceivers": [],
+    "azureFunctionReceivers": [],
+    "armRoleReceivers": []
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Insights/ActionGroups",
+  "ResourceType": "Microsoft.Insights/ActionGroups",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "B08E63B8-3E0B-4003-BA71-B4413106512A",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

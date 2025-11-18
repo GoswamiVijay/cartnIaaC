@@ -1,0 +1,39 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/ChangeTracking(law-id001-s110)",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/ChangeTracking(law-id001-s110)",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "ChangeTracking(law-id001-s110)",
+  "Name": "ChangeTracking(law-id001-s110)",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": {
+    "Name": "ChangeTracking(law-id001-s110)",
+    "Publisher": "Microsoft",
+    "Product": "OMSGallery/ChangeTracking",
+    "PromotionCode": "",
+    "Version": null
+  },
+  "Properties": {
+    "workspaceResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110",
+    "provisioningState": "Succeeded",
+    "creationTime": "Wed, 05 Nov 2025 17:12:50 GMT",
+    "lastModifiedTime": "Wed, 05 Nov 2025 17:12:50 GMT",
+    "containedResources": [
+      "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110/views/ChangeTracking(law-id001-s110)"
+    ]
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.OperationsManagement/solutions",
+  "ResourceType": "Microsoft.OperationsManagement/solutions",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

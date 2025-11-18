@@ -1,0 +1,54 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/kv-pvt-lnk-nic-id001-s160-001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/kv-pvt-lnk-nic-id001-s160-001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001",
+  "ResourceName": "kv-pvt-lnk-nic-id001-s160-001",
+  "Name": "kv-pvt-lnk-nic-id001-s160-001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "9a3fee86-7c6c-41c7-8649-782038116bc3",
+    "ipConfigurations": [
+      {
+        "name": "privateEndpointIpConfig.73611785-21de-4f75-95bb-01a068ed7dbe",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/kv-pvt-lnk-nic-id001-s160-001/ipConfigurations/privateEndpointIpConfig.73611785-21de-4f75-95bb-01a068ed7dbe",
+        "etag": "W/\"5a33eff6-1e86-4665-a2e3-f4488ace0576\"",
+        "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "10.0.7.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "subnet": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-svc-id001-s012"
+          },
+          "primary": true,
+          "privateIPAddressVersion": "IPv4"
+        }
+      }
+    ],
+    "dnsSettings": {
+      "dnsServers": [],
+      "appliedDnsServers": [],
+      "internalDomainNameSuffix": "kz0txk1c50jepcz2jv1f0f5nca.cx.internal.cloudapp.net"
+    },
+    "macAddress": "",
+    "enableAcceleratedNetworking": false,
+    "enableIPForwarding": false
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/networkInterfaces",
+  "ResourceType": "Microsoft.Network/networkInterfaces",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

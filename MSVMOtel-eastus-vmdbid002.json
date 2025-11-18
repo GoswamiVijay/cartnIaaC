@@ -1,0 +1,71 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMOtel-eastus-vmdbid002",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMOtel-eastus-vmdbid002",
+  "Identity": null,
+  "Kind": "Linux",
+  "Location": "eastus",
+  "ManagedBy": null,
+  "ResourceName": "MSVMOtel-eastus-vmdbid002",
+  "Name": "MSVMOtel-eastus-vmdbid002",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "immutableId": "dcr-af1a7b7839b4487fbc9038af87bc194f",
+    "dataSources": {
+      "performanceCountersOTel": [
+        {
+          "streams": [
+            "Microsoft-OtelPerfMetrics"
+          ],
+          "samplingFrequencyInSeconds": 60,
+          "counterSpecifiers": [
+            "system.filesystem.usage",
+            "system.filesystem.utilization",
+            "system.disk.io",
+            "system.disk.operation_time",
+            "system.disk.operations",
+            "system.memory.usage",
+            "system.network.io",
+            "system.cpu.time",
+            "system.uptime",
+            "system.network.dropped",
+            "system.network.errors"
+          ],
+          "name": "OtelDataSource"
+        }
+      ]
+    },
+    "destinations": {
+      "monitoringAccounts": [
+        {
+          "accountResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.monitor/accounts/mw-rule-id001-s160",
+          "accountId": "7c564f00-41d7-4def-a1cd-4cdfffac2b68",
+          "name": "MonitoringAccountDestination"
+        }
+      ]
+    },
+    "dataFlows": [
+      {
+        "streams": [
+          "Microsoft-OtelPerfMetrics"
+        ],
+        "destinations": [
+          "MonitoringAccountDestination"
+        ]
+      }
+    ],
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Insights/dataCollectionRules",
+  "ResourceType": "Microsoft.Insights/dataCollectionRules",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

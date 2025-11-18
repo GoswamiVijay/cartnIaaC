@@ -1,0 +1,63 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110",
+  "Identity": {
+    "PrincipalId": "709420ac-a15b-49c6-95e4-6a7fff3b2d3a",
+    "TenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+    "Type": "SystemAssigned",
+    "UserAssignedIdentities": null
+  },
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "law-id001-s110",
+  "Name": "law-id001-s110",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "customerId": "e10845f8-6d35-40fd-9f62-215bc60050f5",
+    "provisioningState": "Succeeded",
+    "sku": {
+      "name": "pergb2018",
+      "lastSkuUpdate": "2025-11-05T16:06:00.9850841Z"
+    },
+    "retentionInDays": 30,
+    "features": {
+      "legacy": 0,
+      "searchVersion": 1,
+      "enableLogAccessUsingOnlyResourcePermissions": true,
+      "unifiedSentinelBillingOnly": true
+    },
+    "workspaceCapping": {
+      "dailyQuotaGb": -1.0,
+      "quotaNextResetTime": "2025-11-08T08:00:00Z",
+      "dataIngestionStatus": "RespectQuota"
+    },
+    "publicNetworkAccessForIngestion": "Enabled",
+    "publicNetworkAccessForQuery": "Enabled",
+    "createdDate": "2025-11-05T16:06:00.9850841Z",
+    "modifiedDate": "2025-11-07T21:49:12.5670941Z"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.OperationalInsights/workspaces",
+  "ResourceType": "Microsoft.OperationalInsights/workspaces",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "approvalid": "001",
+    "cartncomponent": "monitoring",
+    "customer": "DOS-CA",
+    "customerid": "001",
+    "environment": "production",
+    "environmentId": "001",
+    "site": "npc",
+    "siteid": "001",
+    "ticketId": "001"
+  },
+  "TagsTable": "\nName            Value     \r\n==============  ==========\r\nsite            npc       \r\ncartncomponent  monitoring\r\ncustomerid      001       \r\napprovalid      001       \r\ncustomer        DOS-CA    \r\nsiteid          001       \r\nenvironmentId   001       \r\nenvironment     production\r\nticketId        001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

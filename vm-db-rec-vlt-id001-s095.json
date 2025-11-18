@@ -1,0 +1,70 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.RecoveryServices/vaults/vm-db-rec-vlt-id001-s095",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.RecoveryServices/vaults/vm-db-rec-vlt-id001-s095",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vm-db-rec-vlt-id001-s095",
+  "Name": "vm-db-rec-vlt-id001-s095",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "privateEndpointStateForBackup": "None",
+    "privateEndpointStateForSiteRecovery": "None",
+    "backupStorageVersion": "V1",
+    "securitySettings": {
+      "softDeleteSettings": {
+        "softDeleteRetentionPeriodInDays": 14,
+        "softDeleteState": "Enabled",
+        "enhancedSecurityState": "Enabled"
+      },
+      "multiUserAuthorization": "Disabled",
+      "sourceScanConfiguration": {
+        "state": "Disabled"
+      }
+    },
+    "redundancySettings": {
+      "standardTierStorageRedundancy": "GeoRedundant",
+      "crossRegionRestore": "Disabled"
+    },
+    "secureScore": "None",
+    "bcdrSecurityLevel": "Poor",
+    "publicNetworkAccess": "Enabled",
+    "restoreSettings": {
+      "crossSubscriptionRestoreSettings": {
+        "crossSubscriptionRestoreState": "Enabled"
+      }
+    }
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.RecoveryServices/vaults",
+  "ResourceType": "Microsoft.RecoveryServices/vaults",
+  "ExtensionResourceType": null,
+  "Sku": {
+    "Name": "RS0",
+    "Tier": "Standard",
+    "Size": null,
+    "Family": null,
+    "Model": null,
+    "Capacity": null
+  },
+  "Tags": {
+    "approvalid": "001",
+    "cartncomponent": "db",
+    "customer": "DOS-CA",
+    "customerid": "001",
+    "environment": "production",
+    "environmentId": "001",
+    "site": "npc",
+    "siteid": "001",
+    "ticketId": "001"
+  },
+  "TagsTable": "\nName            Value     \r\n==============  ==========\r\nsite            npc       \r\ncartncomponent  db        \r\ncustomerid      001       \r\napprovalid      001       \r\ncustomer        DOS-CA    \r\nsiteid          001       \r\nenvironmentId   001       \r\nenvironment     production\r\nticketId        001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

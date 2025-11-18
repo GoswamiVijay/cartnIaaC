@@ -1,0 +1,73 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db/versions/1.0.0",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db/versions/1.0.0",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "1.0.0",
+  "Name": "1.0.0",
+  "ExtensionResourceName": null,
+  "ParentResource": "galleries/cartn_image_gallery_001/images/vm-img-cartnb-db",
+  "Plan": null,
+  "Properties": {
+    "publishingProfile": {
+      "targetRegions": [
+        {
+          "name": "East US 2",
+          "regionalReplicaCount": 1,
+          "storageAccountType": "Standard_ZRS",
+          "excludeFromLatest": false
+        }
+      ],
+      "replicaCount": 1,
+      "excludeFromLatest": false,
+      "publishedDate": "2025-11-07T22:23:58.5048475Z",
+      "storageAccountType": "Standard_LRS",
+      "replicationMode": "Full"
+    },
+    "storageProfile": {
+      "source": {
+        "virtualMachineId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002"
+      },
+      "osDiskImage": {
+        "sizeInGB": 127,
+        "hostCaching": "ReadWrite",
+        "source": {}
+      }
+    },
+    "safetyProfile": {
+      "reportedForPolicyViolation": false,
+      "allowDeletionOfReplicatedLocations": false
+    },
+    "validationsProfile": {
+      "validationOperationStatus": "NotExecuted",
+      "platformAttributes": [
+        {
+          "name": "source_image_publisher",
+          "value": "MicrosoftWindowsServer"
+        },
+        {
+          "name": "source_image_offer",
+          "value": "WindowsServer"
+        },
+        {
+          "name": "source_image_sku",
+          "value": "2022-datacenter-azure-edition-hotpatch"
+        }
+      ]
+    },
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/galleries/images/versions",
+  "ResourceType": "Microsoft.Compute/galleries/images/versions",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

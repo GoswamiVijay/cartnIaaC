@@ -1,0 +1,30 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.EventGrid/systemTopics/stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.EventGrid/systemTopics/stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+  "Name": "stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "source": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.storage/storageaccounts/stgid001s030",
+    "topicType": "microsoft.storage.storageaccounts",
+    "metricResourceId": "1a5c2645-26c5-4cd4-ad5c-d6ec9bdab839"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.EventGrid/systemTopics",
+  "ResourceType": "Microsoft.EventGrid/systemTopics",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

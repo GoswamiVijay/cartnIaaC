@@ -1,0 +1,30 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "cartn_image_gallery_001",
+  "Name": "cartn_image_gallery_001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "identifier": {
+      "uniqueName": "b08e63b8-3e0b-4003-ba71-b4413106512a-CARTN_IMAGE_GALLERY_001"
+    },
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/galleries",
+  "ResourceType": "Microsoft.Compute/galleries",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

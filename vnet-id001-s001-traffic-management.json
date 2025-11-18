@@ -1,0 +1,35 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-id001-s001-traffic-management",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-id001-s001-traffic-management",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-id001-s001-traffic-management",
+  "Name": "vnet-id001-s001-traffic-management",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "083035c2-8e09-47ce-976d-04b39c6451a3",
+    "ipAddress": "52.167.235.61",
+    "publicIPAddressVersion": "IPv4",
+    "publicIPAllocationMethod": "Static",
+    "idleTimeoutInMinutes": 4,
+    "ipConfiguration": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004/azureFirewallIpConfigurations/managementIpConfig"
+    }
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/publicIPAddresses",
+  "ResourceType": "Microsoft.Network/publicIPAddresses",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

@@ -1,0 +1,63 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/bastionHosts/vnet-hst-bastion-id001-s002",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/bastionHosts/vnet-hst-bastion-id001-s002",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-hst-bastion-id001-s002",
+  "Name": "vnet-hst-bastion-id001-s002",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "dnsName": "bst-51e0745b-d3f5-49ff-ad4d-be0cfe31f672.bastion.azure.com",
+    "scaleUnits": 2,
+    "publicUri": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-pip-bastion-id001-s003",
+    "ipConfigurations": [
+      {
+        "name": "IpConf",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/bastionHosts/vnet-hst-bastion-id001-s002/bastionHostIpConfigurations/IpConf",
+        "etag": "W/\"7dc7b10e-1e81-4a0d-a6cd-81425d6bbe2d\"",
+        "type": "Microsoft.Network/bastionHosts/bastionHostIpConfigurations",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAllocationMethod": "Dynamic",
+          "publicIPAddress": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-pip-bastion-id001-s003"
+          },
+          "subnet": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureBastionSubnet"
+          }
+        }
+      }
+    ]
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/bastionHosts",
+  "ResourceType": "Microsoft.Network/bastionHosts",
+  "ExtensionResourceType": null,
+  "Sku": {
+    "Name": "Basic",
+    "Tier": null,
+    "Size": null,
+    "Family": null,
+    "Model": null,
+    "Capacity": null
+  },
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environment": "production",
+    "customerid": "001",
+    "siteid": "001",
+    "ticketId": "001",
+    "approvalid": "001"
+  },
+  "TagsTable": "\nName         Value     \r\n===========  ==========\r\ncustomerid   001       \r\napprovalid   001       \r\ncustomer     DOS-CA    \r\nsiteid       001       \r\nsite         npc       \r\nenvironment  production\r\nticketId     001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

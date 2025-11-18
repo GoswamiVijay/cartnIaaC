@@ -1,0 +1,86 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/staticSites/swa-qpui-id001-s050",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/staticSites/swa-qpui-id001-s050",
+  "Identity": {
+    "PrincipalId": "87e22751-ca0d-417c-b37f-d6ff402c0f95",
+    "TenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+    "Type": "SystemAssigned",
+    "UserAssignedIdentities": null
+  },
+  "Kind": null,
+  "Location": "East US 2",
+  "ManagedBy": null,
+  "ResourceName": "swa-qpui-id001-s050",
+  "Name": "swa-qpui-id001-s050",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "defaultHostname": "proud-smoke-0ac73870f.3.azurestaticapps.net",
+    "repositoryUrl": null,
+    "branch": null,
+    "customDomains": [],
+    "stableInboundIP": "20.36.155.75",
+    "privateEndpointConnections": [],
+    "stagingEnvironmentPolicy": "Enabled",
+    "allowConfigFileUpdates": true,
+    "contentDistributionEndpoint": "https://content-eus2.infrastructure.3.azurestaticapps.net",
+    "keyVaultReferenceIdentity": "SystemAssigned",
+    "userProvidedFunctionApps": null,
+    "linkedBackends": [],
+    "provider": "SwaCli",
+    "enterpriseGradeCdnStatus": "Disabled",
+    "publicNetworkAccess": null,
+    "databaseConnections": [],
+    "trafficSplitting": {
+      "environmentDistribution": {
+        "default": 100
+      }
+    },
+    "targetResourceGroupResourceId": null,
+    "trialExpirationTimeUtc": null,
+    "prettyNameStatus": null,
+    "prettyName": null,
+    "prettyNameHostname": null,
+    "backendRegion": {
+      "regionName": null,
+      "status": null
+    },
+    "stagingEnvironmentRegion": null,
+    "deploymentAuthPolicy": "DeploymentToken",
+    "federatedIdentityTenantId": null,
+    "federatedIdentityClientId": null,
+    "federatedIdentitySubscriptionId": null,
+    "deploymentStorageAccountResourceId": null,
+    "deploymentStorageAccountReferenceIdentity": null,
+    "networkConfigurations": null
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Web/staticSites",
+  "ResourceType": "Microsoft.Web/staticSites",
+  "ExtensionResourceType": null,
+  "Sku": {
+    "Name": "Standard",
+    "Tier": "Standard",
+    "Size": null,
+    "Family": null,
+    "Model": null,
+    "Capacity": null
+  },
+  "Tags": {
+    "customer": "",
+    "customerid": "",
+    "environment": "",
+    "environmentId": "",
+    "site": "",
+    "siteid": "",
+    "ticketId": "",
+    "approvalid": "",
+    "cartncomponent": "qpui"
+  },
+  "TagsTable": "\nName            Value\r\n==============  =====\r\nsite                 \r\ncartncomponent  qpui \r\ncustomerid           \r\napprovalid           \r\ncustomer             \r\nsiteid               \r\nenvironmentId        \r\nenvironment          \r\nticketId             \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

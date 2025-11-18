@@ -1,0 +1,169 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030",
+  "Identity": null,
+  "Kind": "StorageV2",
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "stgid001s030",
+  "Name": "stgid001s030",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "allowCrossTenantDelegationSas": false,
+    "dualStackEndpointPreference": {
+      "defaultDualStackEndpoints": false,
+      "publishIpv4Endpoint": false,
+      "publishIpv6Endpoint": false
+    },
+    "dnsEndpointType": "Standard",
+    "defaultToOAuthAuthentication": true,
+    "publicNetworkAccess": "Enabled",
+    "keyCreationTime": {
+      "key1": "2025-11-04T15:54:57.0550064Z",
+      "key2": "2025-11-04T15:54:57.0550064Z"
+    },
+    "allowCrossTenantReplication": false,
+    "privateEndpointConnections": [
+      {
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030/privateEndpointConnections/stgid001s030.0bff44ad-e891-43b2-aced-afb714d72977",
+        "name": "stgid001s030.0bff44ad-e891-43b2-aced-afb714d72977",
+        "type": "Microsoft.Storage/storageAccounts/privateEndpointConnections",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateEndpoint": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031"
+          },
+          "privateLinkServiceConnectionState": {
+            "status": "Approved",
+            "description": "Auto-Approved",
+            "actionRequired": "None"
+          }
+        }
+      }
+    ],
+    "minimumTlsVersion": "TLS1_2",
+    "allowBlobPublicAccess": false,
+    "allowSharedKeyAccess": true,
+    "largeFileSharesState": "Enabled",
+    "networkAcls": {
+      "ipv6Rules": [],
+      "resourceAccessRules": [
+        {
+          "tenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+          "resourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/providers/Microsoft.Security/datascanners/storageDataScanner"
+        }
+      ],
+      "bypass": "Logging, Metrics, AzureServices",
+      "virtualNetworkRules": [
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-ingsvc-id001-s010",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-api-id001-s009",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-qpapi-id001-s008",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureBastionSubnet",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-appgtw-id001-s014",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-stg-id001-s013",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-svc-id001-s012",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-db-id001-s011",
+          "action": "Allow",
+          "state": "Succeeded"
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-qpui-id001-s007",
+          "action": "Allow",
+          "state": "Succeeded"
+        }
+      ],
+      "ipRules": [],
+      "defaultAction": "Deny"
+    },
+    "supportsHttpsTrafficOnly": true,
+    "encryption": {
+      "requireInfrastructureEncryption": false,
+      "services": {
+        "file": {
+          "keyType": "Account",
+          "enabled": true,
+          "lastEnabledTime": "2025-11-04T15:54:57.0706209Z"
+        },
+        "blob": {
+          "keyType": "Account",
+          "enabled": true,
+          "lastEnabledTime": "2025-11-04T15:54:57.0706209Z"
+        }
+      },
+      "keySource": "Microsoft.Storage"
+    },
+    "accessTier": "Hot",
+    "provisioningState": "Succeeded",
+    "creationTime": "2025-11-04T15:54:56.7581264Z",
+    "primaryEndpoints": {
+      "dfs": "https://stgid001s030.dfs.core.windows.net/",
+      "web": "https://stgid001s030.z20.web.core.windows.net/",
+      "blob": "https://stgid001s030.blob.core.windows.net/",
+      "queue": "https://stgid001s030.queue.core.windows.net/",
+      "table": "https://stgid001s030.table.core.windows.net/",
+      "file": "https://stgid001s030.file.core.windows.net/"
+    },
+    "primaryLocation": "eastus2",
+    "statusOfPrimary": "available",
+    "secondaryLocation": "centralus",
+    "statusOfSecondary": "available"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Storage/storageAccounts",
+  "ResourceType": "Microsoft.Storage/storageAccounts",
+  "ExtensionResourceType": null,
+  "Sku": {
+    "Name": "Standard_GRS",
+    "Tier": "Standard",
+    "Size": null,
+    "Family": null,
+    "Model": null,
+    "Capacity": null
+  },
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environmentId": "001",
+    "environment": "production",
+    "customerid": "001",
+    "ticketId": "001",
+    "approvalid": "001",
+    "siteid": "001"
+  },
+  "TagsTable": "\nName           Value     \r\n=============  ==========\r\nsite           npc       \r\ncustomerid     001       \r\napprovalid     001       \r\ncustomer       DOS-CA    \r\nsiteid         001       \r\nenvironmentId  001       \r\nenvironment    production\r\nticketId       001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

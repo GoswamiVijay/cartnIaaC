@@ -1,0 +1,38 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/MDE.Windows",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/MDE.Windows",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "MDE.Windows",
+  "Name": "MDE.Windows",
+  "ExtensionResourceName": null,
+  "ParentResource": "virtualMachines/vmdbid002",
+  "Plan": null,
+  "Properties": {
+    "autoUpgradeMinorVersion": true,
+    "forceUpdateTag": "9d6b544b-c7c6-4453-888e-691175100b29",
+    "provisioningState": "Succeeded",
+    "publisher": "Microsoft.Azure.AzureDefenderForServers",
+    "type": "MDE.Windows",
+    "typeHandlerVersion": "1.0",
+    "settings": {
+      "azureResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+      "forceReOnboarding": false,
+      "vNextEnabled": true,
+      "autoUpdate": true
+    }
+  },
+  "ResourceGroupName": "RG-ID001",
+  "Type": "Microsoft.Compute/virtualMachines/extensions",
+  "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

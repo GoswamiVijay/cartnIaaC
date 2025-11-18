@@ -1,0 +1,31 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/AzureMonitorWindowsAgent",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/AzureMonitorWindowsAgent",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "AzureMonitorWindowsAgent",
+  "Name": "AzureMonitorWindowsAgent",
+  "ExtensionResourceName": null,
+  "ParentResource": "virtualMachines/vmdbid002",
+  "Plan": null,
+  "Properties": {
+    "autoUpgradeMinorVersion": true,
+    "provisioningState": "Succeeded",
+    "publisher": "Microsoft.Azure.Monitor",
+    "type": "AzureMonitorWindowsAgent",
+    "typeHandlerVersion": "1.0"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/virtualMachines/extensions",
+  "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

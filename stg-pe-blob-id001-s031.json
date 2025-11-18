@@ -1,0 +1,77 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "stg-pe-blob-id001-s031",
+  "Name": "stg-pe-blob-id001-s031",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "bdca3aa4-6c7d-4bec-9be9-7ad38b124b71",
+    "privateLinkServiceConnections": [
+      {
+        "name": "stg-pe-blob-id001-s031_76a7c31d-7b46-49b4-8e55-3fb8a89aa175",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031/privateLinkServiceConnections/stg-pe-blob-id001-s031_76a7c31d-7b46-49b4-8e55-3fb8a89aa175",
+        "etag": "W/\"ad8ab9a8-01aa-4612-b97d-b0ec0af728cf\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateLinkServiceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030",
+          "groupIds": [
+            "blob"
+          ],
+          "privateLinkServiceConnectionState": {
+            "status": "Approved",
+            "description": "Auto-Approved",
+            "actionsRequired": "None"
+          }
+        },
+        "type": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections"
+      }
+    ],
+    "manualPrivateLinkServiceConnections": [],
+    "customNetworkInterfaceName": "",
+    "subnet": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-stg-id001-s013"
+    },
+    "ipConfigurations": [],
+    "networkInterfaces": [
+      {
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae"
+      }
+    ],
+    "customDnsConfigs": [
+      {
+        "fqdn": "stgid001s030.blob.core.windows.net",
+        "ipAddresses": [
+          "10.0.8.4"
+        ]
+      }
+    ],
+    "ipVersionType": "IPv4"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/privateEndpoints",
+  "ResourceType": "Microsoft.Network/privateEndpoints",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environmentId": "001",
+    "environment": "production",
+    "customerid": "001",
+    "ticketId": "001",
+    "approvalid": "001",
+    "siteid": "001"
+  },
+  "TagsTable": "\nName           Value     \r\n=============  ==========\r\nsite           npc       \r\ncustomerid     001       \r\napprovalid     001       \r\ncustomer       DOS-CA    \r\nsiteid         001       \r\nenvironmentId  001       \r\nenvironment    production\r\nticketId       001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

@@ -1,0 +1,32 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/restorePointCollections/rstre-pt-collection-id001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/restorePointCollections/rstre-pt-collection-id001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "rstre-pt-collection-id001",
+  "Name": "rstre-pt-collection-id001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "source": {
+      "location": "eastus2",
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002"
+    },
+    "restorePointCollectionId": "56300c79-407c-426a-99e1-203038cbefbb",
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/restorePointCollections",
+  "ResourceType": "Microsoft.Compute/restorePointCollections",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

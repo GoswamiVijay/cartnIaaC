@@ -1,0 +1,63 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031",
+  "ResourceName": "stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+  "Name": "stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "22e14104-c41e-47a5-a42f-33e16544b5bb",
+    "ipConfigurations": [
+      {
+        "name": "privateEndpointIpConfig.bf07c2fa-143b-4a18-a3aa-8636877781e0",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae/ipConfigurations/privateEndpointIpConfig.bf07c2fa-143b-4a18-a3aa-8636877781e0",
+        "etag": "W/\"3a154198-0eec-415b-9cb1-6ed29161b44a\"",
+        "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "10.0.8.4",
+          "privateIPAllocationMethod": "Dynamic",
+          "subnet": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-stg-id001-s013"
+          },
+          "primary": true,
+          "privateIPAddressVersion": "IPv4"
+        }
+      }
+    ],
+    "dnsSettings": {
+      "dnsServers": [],
+      "appliedDnsServers": [],
+      "internalDomainNameSuffix": "kz0txk1c50jepcz2jv1f0f5nca.cx.internal.cloudapp.net"
+    },
+    "macAddress": "",
+    "enableAcceleratedNetworking": false,
+    "enableIPForwarding": false
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/networkInterfaces",
+  "ResourceType": "Microsoft.Network/networkInterfaces",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environmentId": "001",
+    "environment": "production",
+    "customerid": "001",
+    "ticketId": "001",
+    "approvalid": "001",
+    "siteid": "001"
+  },
+  "TagsTable": "\nName           Value     \r\n=============  ==========\r\nsite           npc       \r\ncustomerid     001       \r\napprovalid     001       \r\ncustomer       DOS-CA    \r\nsiteid         001       \r\nenvironmentId  001       \r\nenvironment    production\r\nticketId       001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

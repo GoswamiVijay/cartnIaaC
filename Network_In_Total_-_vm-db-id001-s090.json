@@ -1,0 +1,54 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/Microsoft.Insights/metricAlerts/Network%20In%20Total%20-%20vm-db-id001-s090",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/Microsoft.Insights/metricAlerts/Network%20In%20Total%20-%20vm-db-id001-s090",
+  "Identity": null,
+  "Kind": null,
+  "Location": "global",
+  "ManagedBy": null,
+  "ResourceName": "Network In Total - vm-db-id001-s090",
+  "Name": "Network In Total - vm-db-id001-s090",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "severity": 3,
+    "enabled": true,
+    "scopes": [
+      "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vm-db-id001-s090"
+    ],
+    "evaluationFrequency": "PT5M",
+    "actions": [
+      {
+        "actionGroupId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/RecommendedAlertRules-AG-1"
+      }
+    ],
+    "windowSize": "PT5M",
+    "criteria": {
+      "allOf": [
+        {
+          "operator": "GreaterThan",
+          "threshold": 500000000000.0,
+          "name": "Metric1",
+          "metricName": "Network In Total",
+          "dimensions": [],
+          "timeAggregation": "Total",
+          "criterionType": "StaticThresholdCriterion"
+        }
+      ],
+      "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+    }
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Insights/metricAlerts",
+  "ResourceType": "Microsoft.Insights/metricAlerts",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "alertRuleCreatedWithAlertsRecommendations": "true"
+  },
+  "TagsTable": "\nName                                       Value\r\n=========================================  =====\r\nalertRuleCreatedWithAlertsRecommendations  true \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

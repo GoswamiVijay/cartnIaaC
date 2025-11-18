@@ -1,0 +1,60 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vm-img-cartnb-db",
+  "Name": "vm-img-cartnb-db",
+  "ExtensionResourceName": null,
+  "ParentResource": "galleries/cartn_image_gallery_001",
+  "Plan": null,
+  "Properties": {
+    "hyperVGeneration": "V2",
+    "architecture": "x64",
+    "features": [
+      {
+        "name": "SecurityType",
+        "value": "TrustedLaunch"
+      },
+      {
+        "name": "DiskControllerTypes",
+        "value": "SCSI"
+      },
+      {
+        "name": "IsAcceleratedNetworkSupported",
+        "value": "True"
+      }
+    ],
+    "osType": "Windows",
+    "osState": "Specialized",
+    "identifier": {
+      "publisher": "Xfinion",
+      "offer": "WindowsServer",
+      "sku": "2022-datacenter-azure-edition-hotpatch"
+    },
+    "recommended": {
+      "vCPUs": {
+        "min": 1,
+        "max": 16
+      },
+      "memory": {
+        "min": 1,
+        "max": 32
+      }
+    },
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Compute/galleries/images",
+  "ResourceType": "Microsoft.Compute/galleries/images",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

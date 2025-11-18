@@ -1,0 +1,35 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/ddosProtectionPlans/vnet-ddosp-id001-s015",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/ddosProtectionPlans/vnet-ddosp-id001-s015",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-ddosp-id001-s015",
+  "Name": "vnet-ddosp-id001-s015",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/ddosProtectionPlans",
+  "ResourceType": "Microsoft.Network/ddosProtectionPlans",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environment": "production",
+    "customerid": "001",
+    "siteid": "001",
+    "ticketId": "001",
+    "approvalid": "001"
+  },
+  "TagsTable": "\nName         Value     \r\n===========  ==========\r\ncustomerid   001       \r\napprovalid   001       \r\ncustomer     DOS-CA    \r\nsiteid       001       \r\nsite         npc       \r\nenvironment  production\r\nticketId     001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

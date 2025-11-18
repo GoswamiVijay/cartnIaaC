@@ -1,0 +1,61 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "kv-pvt-lnk-id001-s160-001",
+  "Name": "kv-pvt-lnk-id001-s160-001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "844561ea-b6e6-4eb3-a431-c5c9f9624f42",
+    "privateLinkServiceConnections": [
+      {
+        "name": "kv-pvt-lnk-id001-s160-001",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001/privateLinkServiceConnections/kv-pvt-lnk-id001-s160-001",
+        "etag": "W/\"dcc3f5f9-a6c7-46a1-a2b1-b0cc4b03a9b8\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateLinkServiceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001",
+          "groupIds": [
+            "vault"
+          ],
+          "privateLinkServiceConnectionState": {
+            "status": "Approved",
+            "description": "",
+            "actionsRequired": "None"
+          }
+        },
+        "type": "Microsoft.Network/privateEndpoints/privateLinkServiceConnections"
+      }
+    ],
+    "manualPrivateLinkServiceConnections": [],
+    "customNetworkInterfaceName": "kv-pvt-lnk-nic-id001-s160-001",
+    "subnet": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-svc-id001-s012"
+    },
+    "ipConfigurations": [],
+    "networkInterfaces": [
+      {
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/kv-pvt-lnk-nic-id001-s160-001"
+      }
+    ],
+    "customDnsConfigs": [],
+    "ipVersionType": "IPv4"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/privateEndpoints",
+  "ResourceType": "Microsoft.Network/privateEndpoints",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

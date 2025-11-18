@@ -1,0 +1,690 @@
+[
+  {
+    "Name": "vnet-id001-s001-traffic-management",
+    "ResourceType": "Microsoft.Network/publicIPAddresses",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-id001-s001-traffic-management",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vnet-ddosp-id001-s015",
+    "ResourceType": "Microsoft.Network/ddosProtectionPlans",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/ddosProtectionPlans/vnet-ddosp-id001-s015",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environment": "production",
+      "customerid": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "approvalid": "001"
+    }
+  },
+  {
+    "Name": "vnet-fw-pip-id001-s006",
+    "ResourceType": "Microsoft.Network/publicIPAddresses",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-fw-pip-id001-s006",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environment": "production",
+      "customerid": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "approvalid": "001"
+    }
+  },
+  {
+    "Name": "vnet-pip-bastion-id001-s003",
+    "ResourceType": "Microsoft.Network/publicIPAddresses",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-pip-bastion-id001-s003",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vnet-fw-policy-id001-s005",
+    "ResourceType": "Microsoft.Network/firewallPolicies",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/firewallPolicies/vnet-fw-policy-id001-s005",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "vnet-id001-s001",
+    "ResourceType": "Microsoft.Network/virtualNetworks",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environment": "production",
+      "customerid": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "approvalid": "001"
+    }
+  },
+  {
+    "Name": "vnet-hst-bastion-id001-s002",
+    "ResourceType": "Microsoft.Network/bastionHosts",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/bastionHosts/vnet-hst-bastion-id001-s002",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environment": "production",
+      "customerid": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "approvalid": "001"
+    }
+  },
+  {
+    "Name": "vnet-fw-id001-s004",
+    "ResourceType": "Microsoft.Network/azureFirewalls",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environment": "production",
+      "customerid": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "approvalid": "001"
+    }
+  },
+  {
+    "Name": "stgid001s030",
+    "ResourceType": "Microsoft.Storage/storageAccounts",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environmentId": "001",
+      "environment": "production",
+      "customerid": "001",
+      "ticketId": "001",
+      "approvalid": "001",
+      "siteid": "001"
+    }
+  },
+  {
+    "Name": "stg-pe-blob-id001-s031",
+    "ResourceType": "Microsoft.Network/privateEndpoints",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/stg-pe-blob-id001-s031",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environmentId": "001",
+      "environment": "production",
+      "customerid": "001",
+      "ticketId": "001",
+      "approvalid": "001",
+      "siteid": "001"
+    }
+  },
+  {
+    "Name": "stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+    "ResourceType": "Microsoft.Network/networkInterfaces",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "DOS-CA",
+      "site": "npc",
+      "environmentId": "001",
+      "environment": "production",
+      "customerid": "001",
+      "ticketId": "001",
+      "approvalid": "001",
+      "siteid": "001"
+    }
+  },
+  {
+    "Name": "swa-qpui-id001-s050",
+    "ResourceType": "Microsoft.Web/staticSites",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/staticSites/swa-qpui-id001-s050",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "customer": "",
+      "customerid": "",
+      "environment": "",
+      "environmentId": "",
+      "site": "",
+      "siteid": "",
+      "ticketId": "",
+      "approvalid": "",
+      "cartncomponent": "qpui"
+    }
+  },
+  {
+    "Name": "wa-pp-qpapi-id001-s061",
+    "ResourceType": "Microsoft.Web/serverFarms",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/serverFarms/wa-pp-qpapi-id001-s061",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "qpapi",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "wa-qpapi-id001-s060",
+    "ResourceType": "Microsoft.Web/sites",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/sites/wa-qpapi-id001-s060",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "qpapi",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001",
+      "hidden-link: /app-insights-resource-id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/components/ai-id001-s130"
+    }
+  },
+  {
+    "Name": "Application Insights Smart Detection",
+    "ResourceType": "microsoft.insights/actiongroups",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/actiongroups/Application Insights Smart Detection",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "wa-pp-api-id001-s071",
+    "ResourceType": "Microsoft.Web/serverFarms",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/serverFarms/wa-pp-api-id001-s071",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "api",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "wa-api-id001-s070",
+    "ResourceType": "Microsoft.Web/sites",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/sites/wa-api-id001-s070",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "api",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001",
+      "hidden-link: /app-insights-resource-id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/components/ai-id001-s130"
+    }
+  },
+  {
+    "Name": "wa-ingsvc-api-id001-s081",
+    "ResourceType": "Microsoft.Web/serverFarms",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/serverFarms/wa-ingsvc-api-id001-s081",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "ingsvc",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "001",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "wa-ingsvc-id001-s080",
+    "ResourceType": "Microsoft.Web/sites",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Web/sites/wa-ingsvc-id001-s080",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "ingsvc",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "001",
+      "siteid": "001",
+      "ticketId": "001",
+      "hidden-link: /app-insights-resource-id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/components/ai-id001-s130"
+    }
+  },
+  {
+    "Name": "vm-db-rec-vlt-id001-s095",
+    "ResourceType": "Microsoft.RecoveryServices/vaults",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.RecoveryServices/vaults/vm-db-rec-vlt-id001-s095",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "db",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "RecommendedAlertRules-AG-1",
+    "ResourceType": "microsoft.insights/actiongroups",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/actiongroups/RecommendedAlertRules-AG-1",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "Data Disk IOPS Consumed Percentage - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/Data Disk IOPS Consumed Percentage - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "VM Availability - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/VM Availability - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "Percentage CPU - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/Percentage CPU - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "Network Out Total - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/Network Out Total - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "OS Disk IOPS Consumed Percentage - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/OS Disk IOPS Consumed Percentage - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "Available Memory Bytes - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/Available Memory Bytes - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "Network In Total - vm-db-id001-s090",
+    "ResourceType": "Microsoft.Insights/metricalerts",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/metricalerts/Network In Total - vm-db-id001-s090",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "alertRuleCreatedWithAlertsRecommendations": "true"
+    }
+  },
+  {
+    "Name": "stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+    "ResourceType": "Microsoft.EventGrid/systemTopics",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.EventGrid/systemTopics/stgid001s030-88c819ad-9e44-458a-894a-5d643c451c21",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "67e735f5-9662-401e-b815-26ab4aadc9d7-dashboard",
+    "ResourceType": "Microsoft.Portal/dashboards",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Portal/dashboards/67e735f5-9662-401e-b815-26ab4aadc9d7-dashboard",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "hidden-title": "wa-ai-api-id001-s072 Dashboard"
+    }
+  },
+  {
+    "Name": "law-id001-s110",
+    "ResourceType": "Microsoft.OperationalInsights/workspaces",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "monitoring",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "ai-id001-s130",
+    "ResourceType": "microsoft.insights/components",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/components/ai-id001-s130",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "monitoring",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "dce-id001-s140",
+    "ResourceType": "Microsoft.Insights/dataCollectionEndpoints",
+    "Location": "eastus",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionEndpoints/dce-id001-s140",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "monitoring",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "mw-rule-id001-s160",
+    "ResourceType": "microsoft.monitor/accounts",
+    "Location": "eastus",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.monitor/accounts/mw-rule-id001-s160",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "monitoring",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "ChangeTracking(law-id001-s110)",
+    "ResourceType": "Microsoft.OperationsManagement/solutions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/ChangeTracking(law-id001-s110)",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "ct-dcr359165732",
+    "ResourceType": "Microsoft.Insights/dataCollectionRules",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/ct-dcr359165732",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "kv-id001-s160-001",
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Location": "eastus",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {
+      "approvalid": "001",
+      "cartncomponent": "infrastructure",
+      "customer": "DOS-CA",
+      "customerid": "001",
+      "environment": "production",
+      "environmentId": "001",
+      "site": "npc",
+      "siteid": "001",
+      "ticketId": "001"
+    }
+  },
+  {
+    "Name": "vmdbid002-nsg",
+    "ResourceType": "Microsoft.Network/networkSecurityGroups",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkSecurityGroups/vmdbid002-nsg",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002-ip",
+    "ResourceType": "Microsoft.Network/publicIPAddresses",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vmdbid002-ip",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002647_z1",
+    "ResourceType": "Microsoft.Network/networkInterfaces",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/vmdbid002647_z1",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002",
+    "ResourceType": "Microsoft.Compute/virtualMachines",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+    "ResourceType": "Microsoft.Compute/disks",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/disks/vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+    "ResourceGroupName": "RG-ID001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002/AADLoginForWindows",
+    "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/AADLoginForWindows",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002/AzurePolicyforWindows",
+    "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/AzurePolicyforWindows",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002/MDE.Windows",
+    "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/MDE.Windows",
+    "ResourceGroupName": "RG-ID001",
+    "Tags": null
+  },
+  {
+    "Name": "snet-sg-qpui-id001-s007",
+    "ResourceType": "Microsoft.Network/networkSecurityGroups",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkSecurityGroups/snet-sg-qpui-id001-s007",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "kv-pvt-lnk-id001-s160-001",
+    "ResourceType": "Microsoft.Network/privateEndpoints",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "kv-pvt-lnk-nic-id001-s160-001",
+    "ResourceType": "Microsoft.Network/networkInterfaces",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkInterfaces/kv-pvt-lnk-nic-id001-s160-001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "privatelink.vaultcore.azure.net",
+    "ResourceType": "Microsoft.Network/privateDnsZones",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "privatelink.vaultcore.azure.net/ipxg6cuzfkxps",
+    "ResourceType": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+    "Location": "global",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net/virtualNetworkLinks/ipxg6cuzfkxps",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "cartn_image_gallery_001",
+    "ResourceType": "Microsoft.Compute/galleries",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "cartn_image_gallery_001/vm-img-cartnb-db",
+    "ResourceType": "Microsoft.Compute/galleries/images",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "cartn_image_gallery_001/vm-img-cartnb-db/1.0.0",
+    "ResourceType": "Microsoft.Compute/galleries/images/versions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/galleries/cartn_image_gallery_001/images/vm-img-cartnb-db/versions/1.0.0",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "rstre-pt-collection-id001",
+    "ResourceType": "Microsoft.Compute/restorePointCollections",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/restorePointCollections/rstre-pt-collection-id001",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "vmdbid002/AzureMonitorWindowsAgent",
+    "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/AzureMonitorWindowsAgent",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "MSVMI-eastus2-vmdbid002",
+    "ResourceType": "Microsoft.Insights/dataCollectionRules",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMI-eastus2-vmdbid002",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "MSVMOtel-eastus-vmdbid002",
+    "ResourceType": "Microsoft.Insights/dataCollectionRules",
+    "Location": "eastus",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Insights/dataCollectionRules/MSVMOtel-eastus-vmdbid002",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  },
+  {
+    "Name": "SecurityInsights(law-id001-s110)",
+    "ResourceType": "Microsoft.OperationsManagement/solutions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/SecurityInsights(law-id001-s110)",
+    "ResourceGroupName": "rg-id001",
+    "Tags": {}
+  },
+  {
+    "Name": "vmdbid002/Microsoft.Insights.VMDiagnosticsSettings",
+    "ResourceType": "Microsoft.Compute/virtualMachines/extensions",
+    "Location": "eastus2",
+    "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002/extensions/Microsoft.Insights.VMDiagnosticsSettings",
+    "ResourceGroupName": "rg-id001",
+    "Tags": null
+  }
+]

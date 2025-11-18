@@ -1,0 +1,82 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-fw-id001-s004",
+  "Name": "vnet-fw-id001-s004",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "sku": {
+      "name": "AZFW_VNet",
+      "tier": "Basic"
+    },
+    "threatIntelMode": "Alert",
+    "additionalProperties": {},
+    "managementIpConfiguration": {
+      "name": "managementIpConfig",
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004/azureFirewallIpConfigurations/managementIpConfig",
+      "etag": "W/\"3db4515b-d82a-4f3b-a6b1-9bf8d4bf4cfd\"",
+      "type": "Microsoft.Network/azureFirewalls/azureFirewallIpConfigurations",
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateIPAllocationMethod": "Dynamic",
+        "publicIPAddress": {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-id001-s001-traffic-management"
+        },
+        "subnet": {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureFirewallManagementSubnet"
+        }
+      }
+    },
+    "ipConfigurations": [
+      {
+        "name": "ipConfig",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004/azureFirewallIpConfigurations/ipConfig",
+        "etag": "W/\"3db4515b-d82a-4f3b-a6b1-9bf8d4bf4cfd\"",
+        "type": "Microsoft.Network/azureFirewalls/azureFirewallIpConfigurations",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateIPAddress": "10.0.1.68",
+          "privateIPAllocationMethod": "Dynamic",
+          "publicIPAddress": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-fw-pip-id001-s006"
+          },
+          "subnet": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureFirewallSubnet"
+          }
+        }
+      }
+    ],
+    "networkRuleCollections": [],
+    "applicationRuleCollections": [],
+    "natRuleCollections": [],
+    "firewallPolicy": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/firewallPolicies/vnet-fw-policy-id001-s005"
+    }
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/azureFirewalls",
+  "ResourceType": "Microsoft.Network/azureFirewalls",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environment": "production",
+    "customerid": "001",
+    "siteid": "001",
+    "ticketId": "001",
+    "approvalid": "001"
+  },
+  "TagsTable": "\nName         Value     \r\n===========  ==========\r\ncustomerid   001       \r\napprovalid   001       \r\ncustomer     DOS-CA    \r\nsiteid       001       \r\nsite         npc       \r\nenvironment  production\r\nticketId     001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

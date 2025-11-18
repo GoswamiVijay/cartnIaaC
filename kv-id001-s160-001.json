@@ -1,0 +1,122 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus",
+  "ManagedBy": null,
+  "ResourceName": "kv-id001-s160-001",
+  "Name": "kv-id001-s160-001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "sku": {
+      "family": "A",
+      "name": "Standard"
+    },
+    "tenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+    "networkAcls": {
+      "bypass": "AzureServices",
+      "defaultAction": "Deny",
+      "ipRules": [],
+      "virtualNetworkRules": [
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/default",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/azurefirewallsubnet",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-qpui-id001-s007",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-db-id001-s011",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-svc-id001-s012",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-stg-id001-s013",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-appgtw-id001-s014",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/azurebastionsubnet",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/azurefirewallmanagementsubnet",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-qpapi-id001-s008",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-api-id001-s009",
+          "ignoreMissingVnetServiceEndpoint": false
+        },
+        {
+          "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001/subnets/snet-ingsvc-id001-s010",
+          "ignoreMissingVnetServiceEndpoint": false
+        }
+      ]
+    },
+    "privateEndpointConnections": [
+      {
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001/privateEndpointConnections/kv-pvt-lnk-id001-s160-001",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "privateEndpoint": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateEndpoints/kv-pvt-lnk-id001-s160-001"
+          },
+          "privateLinkServiceConnectionState": {
+            "status": "Approved",
+            "actionsRequired": "None"
+          }
+        }
+      }
+    ],
+    "accessPolicies": [],
+    "enabledForDeployment": true,
+    "enabledForDiskEncryption": true,
+    "enabledForTemplateDeployment": true,
+    "enableSoftDelete": true,
+    "softDeleteRetentionInDays": 90,
+    "enableRbacAuthorization": true,
+    "enablePurgeProtection": true,
+    "vaultUri": "https://kv-id001-s160-001.vault.azure.net/",
+    "provisioningState": "Succeeded",
+    "publicNetworkAccess": "Enabled"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.KeyVault/vaults",
+  "ResourceType": "Microsoft.KeyVault/vaults",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "approvalid": "001",
+    "cartncomponent": "infrastructure",
+    "customer": "DOS-CA",
+    "customerid": "001",
+    "environment": "production",
+    "environmentId": "001",
+    "site": "npc",
+    "siteid": "001",
+    "ticketId": "001"
+  },
+  "TagsTable": "\nName            Value         \r\n==============  ==============\r\nsite            npc           \r\ncartncomponent  infrastructure\r\ncustomerid      001           \r\napprovalid      001           \r\ncustomer        DOS-CA        \r\nsiteid          001           \r\nenvironmentId   001           \r\nenvironment     production    \r\nticketId        001           \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

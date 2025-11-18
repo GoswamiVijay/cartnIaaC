@@ -1,0 +1,33 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net/virtualNetworkLinks/ipxg6cuzfkxps",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net/virtualNetworkLinks/ipxg6cuzfkxps",
+  "Identity": null,
+  "Kind": null,
+  "Location": "global",
+  "ManagedBy": null,
+  "ResourceName": "ipxg6cuzfkxps",
+  "Name": "ipxg6cuzfkxps",
+  "ExtensionResourceName": null,
+  "ParentResource": "privateDnsZones/privatelink.vaultcore.azure.net",
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "registrationEnabled": false,
+    "resolutionPolicy": "Default",
+    "virtualNetwork": {
+      "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001"
+    },
+    "virtualNetworkLinkState": "Completed"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+  "ResourceType": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": null,
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

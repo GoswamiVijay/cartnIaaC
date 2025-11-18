@@ -1,0 +1,39 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/Microsoft.Network/firewallPolicies/vnet-fw-policy-id001-s005",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/Microsoft.Network/firewallPolicies/vnet-fw-policy-id001-s005",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-fw-policy-id001-s005",
+  "Name": "vnet-fw-policy-id001-s005",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "size": "0.001145363 MB",
+    "sku": {
+      "tier": "Basic"
+    },
+    "childPolicies": [],
+    "ruleCollectionGroups": [],
+    "firewalls": [
+      {
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/azureFirewalls/vnet-fw-id001-s004"
+      }
+    ],
+    "threatIntelMode": "Alert",
+    "provisioningState": "Succeeded"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/FirewallPolicies",
+  "ResourceType": "Microsoft.Network/FirewallPolicies",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

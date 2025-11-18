@@ -1,0 +1,41 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/SecurityInsights(law-id001-s110)",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationsManagement/solutions/SecurityInsights(law-id001-s110)",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "SecurityInsights(law-id001-s110)",
+  "Name": "SecurityInsights(law-id001-s110)",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": {
+    "Name": "SecurityInsights(law-id001-s110)",
+    "Publisher": "Microsoft",
+    "Product": "OMSGallery/SecurityInsights",
+    "PromotionCode": "",
+    "Version": null
+  },
+  "Properties": {
+    "workspaceResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.operationalinsights/workspaces/law-id001-s110",
+    "provisioningState": "Succeeded",
+    "creationTime": "Mon, 10 Nov 2025 15:27:07 GMT",
+    "sku": {
+      "name": "Unified"
+    },
+    "lastModifiedTime": "Mon, 10 Nov 2025 15:27:07 GMT",
+    "containedResources": [],
+    "workbookTemplates": []
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.OperationsManagement/solutions",
+  "ResourceType": "Microsoft.OperationsManagement/solutions",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {},
+  "TagsTable": null,
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

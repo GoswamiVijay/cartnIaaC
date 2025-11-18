@@ -1,0 +1,185 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus2",
+  "ManagedBy": null,
+  "ResourceName": "vnet-id001-s001",
+  "Name": "vnet-id001-s001",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "provisioningState": "Succeeded",
+    "resourceGuid": "ab3b7556-fe62-4792-8b3c-4d765d17ed10",
+    "addressSpace": {
+      "addressPrefixes": [
+        "10.0.0.0/19"
+      ]
+    },
+    "subnets": [
+      {
+        "name": "default",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/default",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "AzureFirewallSubnet",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureFirewallSubnet",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/azureFirewalls/VNET-FW-ID001-S004/azureFirewallIpConfigurations/IPCONFIG"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-db-id001-s011",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-db-id001-s011",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/networkInterfaces/VMDBID002647_Z1/ipConfigurations/IPCONFIG1"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-stg-id001-s013",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-stg-id001-s013",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/networkInterfaces/STG-PE-BLOB-ID001-S031.NIC.B565616A-FA35-4CDB-B722-9C2EC71639AE/ipConfigurations/PRIVATEENDPOINTIPCONFIG.BF07C2FA-143B-4A18-A3AA-8636877781E0"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-appgtw-id001-s014",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-appgtw-id001-s014",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "AzureBastionSubnet",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureBastionSubnet",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/bastionHosts/VNET-HST-BASTION-ID001-S002/bastionHostIpConfigurations/IPCONF"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "AzureFirewallManagementSubnet",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/AzureFirewallManagementSubnet",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/azureFirewalls/VNET-FW-ID001-S004/azureFirewallIpConfigurations/MANAGEMENTIPCONFIG"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-qpapi-id001-s008",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-qpapi-id001-s008",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-api-id001-s009",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-api-id001-s009",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-ingsvc-id001-s010",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-ingsvc-id001-s010",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded"
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-qpui-id001-s007",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-qpui-id001-s007",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "networkSecurityGroup": {
+            "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkSecurityGroups/snet-sg-qpui-id001-s007"
+          }
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      },
+      {
+        "name": "snet-svc-id001-s012",
+        "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001/subnets/snet-svc-id001-s012",
+        "etag": "W/\"dba2382c-eeb7-4323-b50f-c847a386b52c\"",
+        "properties": {
+          "provisioningState": "Succeeded",
+          "ipConfigurations": [
+            {
+              "id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/RG-ID001/providers/Microsoft.Network/networkInterfaces/KV-PVT-LNK-NIC-ID001-S160-001/ipConfigurations/PRIVATEENDPOINTIPCONFIG.73611785-21DE-4F75-95BB-01A068ED7DBE"
+            }
+          ]
+        },
+        "type": "Microsoft.Network/virtualNetworks/subnets"
+      }
+    ],
+    "virtualNetworkPeerings": []
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Network/virtualNetworks",
+  "ResourceType": "Microsoft.Network/virtualNetworks",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "customer": "DOS-CA",
+    "site": "npc",
+    "environment": "production",
+    "customerid": "001",
+    "siteid": "001",
+    "ticketId": "001",
+    "approvalid": "001"
+  },
+  "TagsTable": "\nName         Value     \r\n===========  ==========\r\ncustomerid   001       \r\napprovalid   001       \r\ncustomer     DOS-CA    \r\nsiteid       001       \r\nsite         npc       \r\nenvironment  production\r\nticketId     001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

@@ -1,0 +1,55 @@
+{
+  "ResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.monitor/accounts/mw-rule-id001-s160",
+  "Id": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourcegroups/rg-id001/providers/microsoft.monitor/accounts/mw-rule-id001-s160",
+  "Identity": null,
+  "Kind": null,
+  "Location": "eastus",
+  "ManagedBy": null,
+  "ResourceName": "mw-rule-id001-s160",
+  "Name": "mw-rule-id001-s160",
+  "ExtensionResourceName": null,
+  "ParentResource": null,
+  "Plan": null,
+  "Properties": {
+    "accountId": "7c564f00-41d7-4def-a1cd-4cdfffac2b68",
+    "metrics": {
+      "prometheusQueryEndpoint": "https://mw-rule-id001-s160-abahdsd3akbbh9ax.eastus.prometheus.monitor.azure.com",
+      "internalId": "mac_7c564f00-41d7-4def-a1cd-4cdfffac2b68",
+      "enableAccessUsingResourcePermissions": true
+    },
+    "endpoints": {
+      "query": "https://mw-rule-id001-s160-abahdsd3akbbh9ax.eastus.data.monitor.azure.com"
+    },
+    "provisioningState": "Succeeded",
+    "defaultIngestionSettings": {
+      "dataCollectionRuleResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/MA_mw-rule-id001-s160_eastus_managed/providers/Microsoft.Insights/dataCollectionRules/mw-rule-id001-s160",
+      "dataCollectionEndpointResourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/MA_mw-rule-id001-s160_eastus_managed/providers/Microsoft.Insights/dataCollectionEndpoints/mw-rule-id001-s160",
+      "dataCollectionRuleImmutableId": "dcr-6a540ac633ea416aaf12d2289597de08",
+      "ingestionEndpoints": {
+        "metrics": "https://mw-rule-id001-s160-fgs2.eastus-1.metrics.ingest.monitor.azure.com"
+      }
+    },
+    "publicNetworkAccess": "Enabled"
+  },
+  "ResourceGroupName": "rg-id001",
+  "Type": "Microsoft.Monitor/accounts",
+  "ResourceType": "Microsoft.Monitor/accounts",
+  "ExtensionResourceType": null,
+  "Sku": null,
+  "Tags": {
+    "approvalid": "001",
+    "cartncomponent": "monitoring",
+    "customer": "DOS-CA",
+    "customerid": "001",
+    "environment": "production",
+    "environmentId": "001",
+    "site": "npc",
+    "siteid": "001",
+    "ticketId": "001"
+  },
+  "TagsTable": "\nName            Value     \r\n==============  ==========\r\nsite            npc       \r\ncartncomponent  monitoring\r\ncustomerid      001       \r\napprovalid      001       \r\ncustomer        DOS-CA    \r\nsiteid          001       \r\nenvironmentId   001       \r\nenvironment     production\r\nticketId        001       \r\n",
+  "SubscriptionId": "b08e63b8-3e0b-4003-ba71-b4413106512a",
+  "CreatedTime": null,
+  "ChangedTime": null,
+  "ETag": null
+}

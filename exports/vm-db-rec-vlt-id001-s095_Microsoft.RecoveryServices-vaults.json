@@ -1,0 +1,244 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vaults_vm_db_rec_vlt_id001_s095_name": {
+      "defaultValue": "vm-db-rec-vlt-id001-s095",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.RecoveryServices/vaults",
+      "apiVersion": "2025-02-01",
+      "name": "[parameters('vaults_vm_db_rec_vlt_id001_s095_name')]",
+      "location": "eastus2",
+      "tags": {
+        "approvalid": "001",
+        "cartncomponent": "db",
+        "customer": "DOS-CA",
+        "customerid": "001",
+        "environment": "production",
+        "environmentId": "001",
+        "site": "npc",
+        "siteid": "001",
+        "ticketId": "001"
+      },
+      "sku": {
+        "name": "RS0",
+        "tier": "Standard"
+      },
+      "properties": {
+        "securitySettings": {
+          "softDeleteSettings": {
+            "softDeleteRetentionPeriodInDays": 14,
+            "softDeleteState": "Enabled",
+            "enhancedSecurityState": "Enabled"
+          },
+          "sourceScanConfiguration": {
+            "state": "Disabled"
+          }
+        },
+        "redundancySettings": {
+          "standardTierStorageRedundancy": "GeoRedundant",
+          "crossRegionRestore": "Disabled"
+        },
+        "publicNetworkAccess": "Enabled",
+        "restoreSettings": {
+          "crossSubscriptionRestoreSettings": {
+            "crossSubscriptionRestoreState": "Enabled"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/DefaultPolicy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {
+        "backupManagementType": "AzureIaasVM",
+        "policyType": "V1",
+        "instantRPDetails": {},
+        "schedulePolicy": {
+          "schedulePolicyType": "SimpleSchedulePolicy",
+          "scheduleRunFrequency": "Daily",
+          "scheduleRunTimes": [
+            "2025-11-05T08:30:00Z"
+          ],
+          "scheduleWeeklyFrequency": 0
+        },
+        "retentionPolicy": {
+          "retentionPolicyType": "LongTermRetentionPolicy",
+          "dailySchedule": {
+            "retentionTimes": [
+              "2025-11-05T08:30:00Z"
+            ],
+            "retentionDuration": {
+              "count": 30,
+              "durationType": "Days"
+            }
+          }
+        },
+        "instantRpRetentionRangeInDays": 2,
+        "timeZone": "UTC",
+        "protectedItemsCount": 0
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/EnhancedPolicy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {
+        "backupManagementType": "AzureIaasVM",
+        "policyType": "V2",
+        "instantRPDetails": {},
+        "schedulePolicy": {
+          "schedulePolicyType": "SimpleSchedulePolicyV2",
+          "scheduleRunFrequency": "Hourly",
+          "hourlySchedule": {
+            "interval": 4,
+            "scheduleWindowStartTime": "2025-11-05T08:00:00Z",
+            "scheduleWindowDuration": 12
+          }
+        },
+        "retentionPolicy": {
+          "retentionPolicyType": "LongTermRetentionPolicy",
+          "dailySchedule": {
+            "retentionTimes": [
+              "2025-11-05T08:00:00Z"
+            ],
+            "retentionDuration": {
+              "count": 30,
+              "durationType": "Days"
+            }
+          }
+        },
+        "instantRpRetentionRangeInDays": 2,
+        "timeZone": "UTC",
+        "protectedItemsCount": 0
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/HourlyLogBackup')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {
+        "backupManagementType": "AzureWorkload",
+        "workLoadType": "SQLDataBase",
+        "settings": {
+          "timeZone": "UTC",
+          "issqlcompression": false,
+          "isCompression": false
+        },
+        "subProtectionPolicy": [
+          {
+            "policyType": "Full",
+            "schedulePolicy": {
+              "schedulePolicyType": "SimpleSchedulePolicy",
+              "scheduleRunFrequency": "Daily",
+              "scheduleRunTimes": [
+                "2025-11-05T08:30:00Z"
+              ],
+              "scheduleWeeklyFrequency": 0
+            },
+            "retentionPolicy": {
+              "retentionPolicyType": "LongTermRetentionPolicy",
+              "dailySchedule": {
+                "retentionTimes": [
+                  "2025-11-05T08:30:00Z"
+                ],
+                "retentionDuration": {
+                  "count": 30,
+                  "durationType": "Days"
+                }
+              }
+            }
+          },
+          {
+            "policyType": "Log",
+            "schedulePolicy": {
+              "schedulePolicyType": "LogSchedulePolicy",
+              "scheduleFrequencyInMins": 60
+            },
+            "retentionPolicy": {
+              "retentionPolicyType": "SimpleRetentionPolicy",
+              "retentionDuration": {
+                "count": 30,
+                "durationType": "Days"
+              }
+            }
+          }
+        ],
+        "protectedItemsCount": 0
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/backupPolicies",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/vm-db-bkp-plcy-id001-s096')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {
+        "backupManagementType": "AzureIaasVM",
+        "policyType": "V2",
+        "instantRPDetails": {},
+        "schedulePolicy": {
+          "schedulePolicyType": "SimpleSchedulePolicyV2",
+          "scheduleRunFrequency": "Daily",
+          "dailySchedule": {
+            "scheduleRunTimes": [
+              "2025-11-04T03:00:00Z"
+            ]
+          }
+        },
+        "retentionPolicy": {
+          "retentionPolicyType": "LongTermRetentionPolicy",
+          "dailySchedule": {
+            "retentionTimes": [
+              "2025-11-04T03:00:00Z"
+            ],
+            "retentionDuration": {
+              "count": 30,
+              "durationType": "Days"
+            }
+          }
+        },
+        "instantRpRetentionRangeInDays": 7,
+        "timeZone": "UTC",
+        "protectedItemsCount": 0
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/replicationAlertSettings",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/defaultAlertSetting')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {
+        "sendToOwners": "DoNotSend",
+        "customEmailAddresses": []
+      }
+    },
+    {
+      "type": "Microsoft.RecoveryServices/vaults/replicationVaultSettings",
+      "apiVersion": "2025-02-01",
+      "name": "[concat(parameters('vaults_vm_db_rec_vlt_id001_s095_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.RecoveryServices/vaults', parameters('vaults_vm_db_rec_vlt_id001_s095_name'))]"
+      ],
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "metricAlerts_Data_Disk_IOPS_Consumed_Percentage___vm_db_id001_s090_name": {
+      "defaultValue": "Data Disk IOPS Consumed Percentage - vm-db-id001-s090",
+      "type": "String"
+    },
+    "virtualMachines_vm_db_id001_s090_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vm-db-id001-s090",
+      "type": "String"
+    },
+    "actionGroups_RecommendedAlertRules_AG_1_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.insights/actionGroups/RecommendedAlertRules-AG-1",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Insights/metricAlerts",
+      "apiVersion": "2018-03-01",
+      "name": "[parameters('metricAlerts_Data_Disk_IOPS_Consumed_Percentage___vm_db_id001_s090_name')]",
+      "location": "global",
+      "tags": {
+        "alertRuleCreatedWithAlertsRecommendations": "true"
+      },
+      "properties": {
+        "severity": 3,
+        "enabled": true,
+        "scopes": [
+          "[parameters('virtualMachines_vm_db_id001_s090_externalid')]"
+        ],
+        "evaluationFrequency": "PT5M",
+        "windowSize": "PT5M",
+        "criteria": {
+          "allOf": [
+            {
+              "threshold": 95.0,
+              "name": "Metric1",
+              "metricName": "Data Disk IOPS Consumed Percentage",
+              "operator": "GreaterThan",
+              "timeAggregation": "Average",
+              "criterionType": "StaticThresholdCriterion"
+            }
+          ],
+          "odata.type": "Microsoft.Azure.Monitor.MultipleResourceMultipleMetricCriteria"
+        },
+        "actions": [
+          {
+            "actionGroupId": "[parameters('actionGroups_RecommendedAlertRules_AG_1_externalid')]"
+          }
+        ]
+      }
+    }
+  ]
+}

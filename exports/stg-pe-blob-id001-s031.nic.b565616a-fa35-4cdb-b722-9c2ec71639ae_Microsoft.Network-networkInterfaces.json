@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "networkInterfaces_stg_pe_blob_id001_s031_nic_b565616a_fa35_4cdb_b722_9c2ec71639ae_name": {
+      "defaultValue": "stg-pe-blob-id001-s031.nic.b565616a-fa35-4cdb-b722-9c2ec71639ae",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkInterfaces",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('networkInterfaces_stg_pe_blob_id001_s031_nic_b565616a_fa35_4cdb_b722_9c2ec71639ae_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environmentId": "001",
+        "environment": "production",
+        "customerid": "001",
+        "ticketId": "001",
+        "approvalid": "001",
+        "siteid": "001"
+      },
+      "kind": "Regular",
+      "properties": {
+        "ipConfigurations": [
+          {
+            "name": "privateEndpointIpConfig.bf07c2fa-143b-4a18-a3aa-8636877781e0",
+            "id": "[concat(resourceId('Microsoft.Network/networkInterfaces', parameters('networkInterfaces_stg_pe_blob_id001_s031_nic_b565616a_fa35_4cdb_b722_9c2ec71639ae_name')), '/ipConfigurations/privateEndpointIpConfig.bf07c2fa-143b-4a18-a3aa-8636877781e0')]",
+            "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
+            "properties": {
+              "privateIPAddress": "10.0.8.4",
+              "privateIPAllocationMethod": "Dynamic",
+              "subnet": {
+                "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-stg-id001-s013')]"
+              },
+              "primary": true,
+              "privateIPAddressVersion": "IPv4"
+            }
+          }
+        ],
+        "dnsSettings": {
+          "dnsServers": []
+        },
+        "enableAcceleratedNetworking": false,
+        "enableIPForwarding": false,
+        "disableTcpStateTracking": false,
+        "nicType": "Standard",
+        "auxiliaryMode": "None",
+        "auxiliarySku": "None"
+      }
+    }
+  ]
+}

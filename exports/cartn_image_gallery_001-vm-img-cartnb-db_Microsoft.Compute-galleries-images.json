@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "galleries_cartn_image_gallery_001_name": {
+      "defaultValue": "cartn_image_gallery_001",
+      "type": "String"
+    },
+    "virtualMachines_vmdbid002_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Compute/galleries/images",
+      "apiVersion": "2024-03-03",
+      "name": "[concat(parameters('galleries_cartn_image_gallery_001_name'), '/vm-img-cartnb-db')]",
+      "location": "eastus2",
+      "properties": {
+        "hyperVGeneration": "V2",
+        "architecture": "x64",
+        "features": [
+          {
+            "name": "SecurityType",
+            "value": "TrustedLaunch"
+          },
+          {
+            "name": "DiskControllerTypes",
+            "value": "SCSI"
+          },
+          {
+            "name": "IsAcceleratedNetworkSupported",
+            "value": "True"
+          }
+        ],
+        "osType": "Windows",
+        "osState": "Specialized",
+        "identifier": {
+          "publisher": "Xfinion",
+          "offer": "WindowsServer",
+          "sku": "2022-datacenter-azure-edition-hotpatch"
+        },
+        "recommended": {
+          "vCPUs": {
+            "min": 1,
+            "max": 16
+          },
+          "memory": {
+            "min": 1,
+            "max": 32
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Compute/galleries/images/versions",
+      "apiVersion": "2024-03-03",
+      "name": "[concat(parameters('galleries_cartn_image_gallery_001_name'), '/vm-img-cartnb-db/1.0.0')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Compute/galleries/images', parameters('galleries_cartn_image_gallery_001_name'), 'vm-img-cartnb-db')]"
+      ],
+      "properties": {
+        "publishingProfile": {
+          "targetRegions": [
+            {
+              "name": "East US 2",
+              "regionalReplicaCount": 1,
+              "storageAccountType": "Standard_ZRS",
+              "excludeFromLatest": false
+            }
+          ],
+          "replicaCount": 1,
+          "excludeFromLatest": false,
+          "storageAccountType": "Standard_LRS",
+          "replicationMode": "Full"
+        },
+        "storageProfile": {
+          "source": {
+            "virtualMachineId": "[parameters('virtualMachines_vmdbid002_externalid')]"
+          },
+          "osDiskImage": {
+            "hostCaching": "ReadWrite",
+            "source": {}
+          }
+        },
+        "safetyProfile": {
+          "allowDeletionOfReplicatedLocations": false
+        }
+      }
+    }
+  ]
+}

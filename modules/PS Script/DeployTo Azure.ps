@@ -1,0 +1,41 @@
+One time Deployemnet
+az deployment group create `
+  --resource-group rg-id001-test-iac `
+  --template-file "C:\IaC\rg-id001-ARM\rg-id001-full-template.json" `
+  --parameters "@C:\IaC\rg-id001-ARM\rg-id001-full-template.parameters.json"
+
+# Single deployment
+az deployment group create `
+  --resource-group rg-id001-test-iac `
+  --template-file "C:\IaC\rg-id001-ARM\modules\network.json"
+
+az deployment group create --resource-group rg-id001-test-iac --template-file .\modules\pip-firewall.json
+az deployment group create --resource-group rg-id001-test-iac --template-file .\modules\pip-bastion.json
+az deployment group create --resource-group rg-id001-test-iac --template-file .\modules\pip-traffic.json
+
+az deployment group create `
+  --resource-group rg-id001-test-iac `
+  --template-file .\modules\nsg.json
+
+az deployment group create `
+  --resource-group rg-id001-test-iac `
+  --template-file .\modules\nic.json
+# Order matters:
+
+First: network.json (VNet + subnets)
+
+Then: your PIP modules (pip-*.json)
+
+Then: nsg.json
+
+Then: nic.json
+
+az deployment group create `
+  --resource-group <Your-Test-RG> `
+  --template-file main.json `
+  --parameters @parameters.json
+
+
+az account set --subscription 13ffdbb3-cce7-4f10-8475-06388b24cb45
+az group create --name rg-id001-test --location eastus2
+az deployment group create --resource-group rg-id001-test --template-file main.json --parameters @parameters.json

@@ -1,0 +1,280 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "storageAccounts_stgid001s030v001_name": {
+      "defaultValue": "stgid001s030v001",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2025-01-01",
+      "name": "[parameters('storageAccounts_stgid001s030v001_name')]",
+      "location": "eastus2",
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "dnsEndpointType": "Standard",
+        "allowedCopyScope": "PrivateLink",
+        "defaultToOAuthAuthentication": true,
+        "publicNetworkAccess": "Disabled",
+        "allowCrossTenantReplication": true,
+        "minimumTlsVersion": "TLS1_2",
+        "allowBlobPublicAccess": false,
+        "allowSharedKeyAccess": true,
+        "largeFileSharesState": "Enabled",
+        "networkAcls": {
+          "resourceAccessRules": [
+            {
+              "tenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+              "resourceId": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/providers/Microsoft.Security/datascanners/storageDataScanner"
+            }
+          ],
+          "bypass": "AzureServices",
+          "virtualNetworkRules": [
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/default')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-db-id001-s011')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-stg-id001-s013')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-appgtw-id001-s014')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/AzureBastionSubnet')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/AzureFirewallManagementSubnet')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-qpapi-id001-s008')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-api-id001-s009')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-ingsvc-id001-s010')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-qpui-id001-s007')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            },
+            {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-svc-id001-s012')]",
+              "action": "Allow",
+              "state": "Succeeded"
+            }
+          ],
+          "ipRules": [
+            {
+              "value": "96.88.215.166",
+              "action": "Allow"
+            }
+          ],
+          "defaultAction": "Deny"
+        },
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+          "requireInfrastructureEncryption": true,
+          "services": {
+            "file": {
+              "keyType": "Account",
+              "enabled": true
+            },
+            "table": {
+              "keyType": "Account",
+              "enabled": true
+            },
+            "queue": {
+              "keyType": "Account",
+              "enabled": true
+            },
+            "blob": {
+              "keyType": "Account",
+              "enabled": true
+            }
+          },
+          "keySource": "Microsoft.Storage"
+        },
+        "accessTier": "Hot"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+      },
+      "properties": {
+        "changeFeed": {
+          "enabled": true
+        },
+        "restorePolicy": {
+          "enabled": true,
+          "days": 6
+        },
+        "containerDeleteRetentionPolicy": {
+          "enabled": true,
+          "days": 7
+        },
+        "cors": {
+          "corsRules": []
+        },
+        "deleteRetentionPolicy": {
+          "allowPermanentDelete": false,
+          "enabled": true,
+          "days": 7
+        },
+        "isVersioningEnabled": true
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/fileServices",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "sku": {
+        "name": "Standard_RAGRS",
+        "tier": "Standard"
+      },
+      "properties": {
+        "protocolSettings": {
+          "smb": {}
+        },
+        "cors": {
+          "corsRules": []
+        },
+        "shareDeleteRetentionPolicy": {
+          "enabled": true,
+          "days": 7
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/privateEndpointConnections",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/', parameters('storageAccounts_stgid001s030v001_name'), '.dabc0214-def1-440c-b91f-d53b2c656e8a')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {
+        "privateEndpoint": {},
+        "privateLinkServiceConnectionState": {
+          "status": "Approved",
+          "description": "Auto-Approved",
+          "actionRequired": "None"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/queueServices",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {
+        "cors": {
+          "corsRules": []
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/tableServices",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {
+        "cors": {
+          "corsRules": []
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default/stg-ctr-blob-id001-s032v001')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_stgid001s030v001_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {
+        "immutableStorageWithVersioning": {
+          "enabled": false
+        },
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/blobServices/containers",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default/stg-ctr-blob-qpapi-id001-s033v001')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/blobServices', parameters('storageAccounts_stgid001s030v001_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {
+        "immutableStorageWithVersioning": {
+          "enabled": false
+        },
+        "defaultEncryptionScope": "$account-encryption-key",
+        "denyEncryptionScopeOverride": false,
+        "publicAccess": "None"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/tableServices/tables",
+      "apiVersion": "2025-01-01",
+      "name": "[concat(parameters('storageAccounts_stgid001s030v001_name'), '/default/CustomerConfigurationStoreTable')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts/tableServices', parameters('storageAccounts_stgid001s030v001_name'), 'default')]",
+        "[resourceId('Microsoft.Storage/storageAccounts', parameters('storageAccounts_stgid001s030v001_name'))]"
+      ],
+      "properties": {}
+    }
+  ]
+}

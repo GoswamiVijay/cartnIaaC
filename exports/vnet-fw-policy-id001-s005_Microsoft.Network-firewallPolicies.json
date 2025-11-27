@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "firewallPolicies_vnet_fw_policy_id001_s005_name": {
+      "defaultValue": "vnet-fw-policy-id001-s005",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/firewallPolicies",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('firewallPolicies_vnet_fw_policy_id001_s005_name')]",
+      "location": "eastus2",
+      "properties": {
+        "sku": {
+          "tier": "Basic"
+        },
+        "threatIntelMode": "Alert"
+      }
+    }
+  ]
+}

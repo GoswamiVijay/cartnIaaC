@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "automationAccounts_aa_act_id001_19_name": {
+      "defaultValue": "aa-act-id001-19",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Automation/automationAccounts/runbooks",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureAutomationTutorialWithIdentity')]",
+      "location": "eastus2",
+      "properties": {
+        "description": " An example runbook which gets all the ARM resources using the Managed Identity.",
+        "logVerbose": false,
+        "logProgress": false,
+        "logActivityTrace": 0,
+        "runbookType": "PowerShell"
+      }
+    }
+  ]
+}

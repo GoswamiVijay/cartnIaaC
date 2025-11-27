@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "staticSites_swa_qpui_id001_s050_name": {
+      "defaultValue": "swa-qpui-id001-s050",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Web/staticSites",
+      "apiVersion": "2024-11-01",
+      "name": "[parameters('staticSites_swa_qpui_id001_s050_name')]",
+      "location": "East US 2",
+      "tags": {
+        "customer": "",
+        "customerid": "",
+        "environment": "",
+        "environmentId": "",
+        "site": "",
+        "siteid": "",
+        "ticketId": "",
+        "approvalid": "",
+        "cartncomponent": "qpui"
+      },
+      "sku": {
+        "name": "Standard",
+        "tier": "Standard"
+      },
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "stagingEnvironmentPolicy": "Enabled",
+        "allowConfigFileUpdates": true,
+        "provider": "SwaCli",
+        "enterpriseGradeCdnStatus": "Disabled"
+      }
+    },
+    {
+      "type": "Microsoft.Web/staticSites/basicAuth",
+      "apiVersion": "2024-11-01",
+      "name": "[concat(parameters('staticSites_swa_qpui_id001_s050_name'), '/default')]",
+      "location": "East US 2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Web/staticSites', parameters('staticSites_swa_qpui_id001_s050_name'))]"
+      ],
+      "properties": {
+        "applicableEnvironmentsMode": "SpecifiedEnvironments"
+      }
+    }
+  ]
+}

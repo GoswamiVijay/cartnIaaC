@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "networkSecurityGroups_snet_sg_qpui_id001_s007_name": {
+      "defaultValue": "snet-sg-qpui-id001-s007",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('networkSecurityGroups_snet_sg_qpui_id001_s007_name')]",
+      "location": "eastus2",
+      "properties": {
+        "securityRules": []
+      }
+    }
+  ]
+}

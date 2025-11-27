@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "name": "wa-pp-qpapi-id001-s061",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "sku": { "name": "P1v2", "tier": "PremiumV2" },
+      "properties": { "reserved": false }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "name": "wa-qpapi-id001-s060",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "dependsOn": ["wa-pp-qpapi-id001-s061"],
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms','wa-pp-qpapi-id001-s061')]"
+      }
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "name": "wa-pp-api-id001-s071",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "sku": { "name": "P1v2", "tier": "PremiumV2" },
+      "properties": { "reserved": false }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "name": "wa-api-id001-s070",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "dependsOn": ["wa-pp-api-id001-s071"],
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms','wa-pp-api-id001-s071')]"
+      }
+    },
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "name": "wa-pp-ingsvc-id001-s081",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "sku": { "name": "P1v2", "tier": "PremiumV2" },
+      "properties": { "reserved": false }
+    },
+    {
+      "type": "Microsoft.Web/sites",
+      "name": "wa-ingsvc-id001-s080",
+      "apiVersion": "2023-12-01",
+      "location": "[parameters('location')]",
+      "dependsOn": ["wa-pp-ingsvc-id001-s081"],
+      "properties": {
+        "serverFarmId": "[resourceId('Microsoft.Web/serverfarms','wa-pp-ingsvc-id001-s081')]"
+      }
+    },
+    {
+      "type": "Microsoft.Web/staticSites",
+      "name": "swa-qpui-id001-s050",
+      "apiVersion": "2023-11-01",
+      "location": "[parameters('location')]",
+      "properties": {
+        "repositoryUrl": "",
+        "branch": "main"
+      }
+    }
+  ]
+}

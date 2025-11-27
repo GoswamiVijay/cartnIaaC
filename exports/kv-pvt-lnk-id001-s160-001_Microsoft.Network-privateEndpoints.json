@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "privateEndpoints_kv_pvt_lnk_id001_s160_001_name": {
+      "defaultValue": "kv-pvt-lnk-id001-s160-001",
+      "type": "String"
+    },
+    "vaults_kv_id001_s160_001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.KeyVault/vaults/kv-id001-s160-001",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    },
+    "privateDnsZones_privatelink_vaultcore_azure_net_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/privateDnsZones/privatelink.vaultcore.azure.net",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/privateEndpoints",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name')]",
+      "location": "eastus2",
+      "properties": {
+        "privateLinkServiceConnections": [
+          {
+            "name": "[parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name')]",
+            "id": "[concat(resourceId('Microsoft.Network/privateEndpoints', parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name')), concat('/privateLinkServiceConnections/', parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name')))]",
+            "properties": {
+              "privateLinkServiceId": "[parameters('vaults_kv_id001_s160_001_externalid')]",
+              "groupIds": [
+                "vault"
+              ],
+              "privateLinkServiceConnectionState": {
+                "status": "Approved",
+                "actionsRequired": "None"
+              }
+            }
+          }
+        ],
+        "manualPrivateLinkServiceConnections": [],
+        "customNetworkInterfaceName": "kv-pvt-lnk-nic-id001-s160-001",
+        "subnet": {
+          "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-svc-id001-s012')]"
+        },
+        "ipConfigurations": [],
+        "customDnsConfigs": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/privateEndpoints/privateDnsZoneGroups",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/privateEndpoints', parameters('privateEndpoints_kv_pvt_lnk_id001_s160_001_name'))]"
+      ],
+      "properties": {
+        "privateDnsZoneConfigs": [
+          {
+            "name": "privatelink-vaultcore-azure-net",
+            "properties": {
+              "privateDnsZoneId": "[parameters('privateDnsZones_privatelink_vaultcore_azure_net_externalid')]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

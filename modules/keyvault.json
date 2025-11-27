@@ -1,0 +1,74 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.KeyVault/vaults",
+      "apiVersion": "2023-07-01",
+      "name": "kv-id001-s160-001",
+      "location": "[parameters('location')]",
+      "properties": {
+        "tenantId": "[subscription().tenantId]",
+        "sku": {
+          "name": "standard",
+          "family": "A"
+        },
+        "enableSoftDelete": true,
+        "enablePurgeProtection": false,
+        "enabledForDeployment": true,
+        "enabledForTemplateDeployment": true,
+        "enabledForDiskEncryption": true,
+        "accessPolicies": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/privateEndpoints",
+      "apiVersion": "2024-07-01",
+      "name": "kv-pvt-lnk-id001-s160-001",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "kv-id001-s160-001"
+      ],
+      "properties": {
+        "subnet": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', 'vnet-id001-s001', 'snet-stg-id001-s013')]"
+        },
+        "privateLinkServiceConnections": [
+          {
+            "name": "keyvault-pe",
+            "properties": {
+              "privateLinkServiceId": "[resourceId('Microsoft.KeyVault/vaults', 'kv-id001-s160-001')]",
+              "groupIds": ["vault"],
+              "requestMessage": "Key Vault Private Endpoint"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones",
+      "apiVersion": "2024-07-01",
+      "name": "privatelink.vaultcore.azure.net"
+    },
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2024-07-01",
+      "name": "privatelink.vaultcore.azure.net/vnet-id001-s001-link",
+      "dependsOn": [
+        "privatelink.vaultcore.azure.net"
+      ],
+      "properties": {
+        "virtualNetwork": {
+          "id": "[resourceId('Microsoft.Network/virtualNetworks', 'vnet-id001-s001')]"
+        },
+        "registrationEnabled": false
+      }
+    }
+  ]
+}

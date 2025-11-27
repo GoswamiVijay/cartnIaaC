@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "disks_vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405_name": {
+      "defaultValue": "vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Compute/disks",
+      "apiVersion": "2025-01-02",
+      "name": "[parameters('disks_vmdbid002_OsDisk_1_9d91a8f1490345d8be5004ada471c405_name')]",
+      "location": "eastus2",
+      "sku": {
+        "name": "Premium_LRS",
+        "tier": "Premium"
+      },
+      "zones": [
+        "1"
+      ],
+      "properties": {
+        "osType": "Windows",
+        "hyperVGeneration": "V2",
+        "supportsHibernation": true,
+        "supportedCapabilities": {
+          "diskControllerTypes": "SCSI, NVMe",
+          "acceleratedNetwork": true,
+          "architecture": "x64"
+        },
+        "creationData": {
+          "createOption": "FromImage",
+          "imageReference": {
+            "id": "/Subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/Providers/Microsoft.Compute/Locations/eastus2/Publishers/MicrosoftWindowsServer/ArtifactTypes/VMImage/Offers/WindowsServer/Skus/2022-datacenter-azure-edition-hotpatch/Versions/20348.4297.251024"
+          }
+        },
+        "diskSizeGB": 127,
+        "diskIOPSReadWrite": 500,
+        "diskMBpsReadWrite": 100,
+        "encryption": {
+          "type": "EncryptionAtRestWithPlatformKey"
+        },
+        "networkAccessPolicy": "AllowAll",
+        "securityProfile": {
+          "securityType": "TrustedLaunch"
+        },
+        "publicNetworkAccess": "Enabled",
+        "tier": "P10"
+      }
+    }
+  ]
+}

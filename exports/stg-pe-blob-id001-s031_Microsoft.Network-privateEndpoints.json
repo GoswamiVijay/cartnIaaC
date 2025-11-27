@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "privateEndpoints_stg_pe_blob_id001_s031_name": {
+      "defaultValue": "stg-pe-blob-id001-s031",
+      "type": "String"
+    },
+    "storageAccounts_stgid001s030_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Storage/storageAccounts/stgid001s030",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/privateEndpoints",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('privateEndpoints_stg_pe_blob_id001_s031_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environmentId": "001",
+        "environment": "production",
+        "customerid": "001",
+        "ticketId": "001",
+        "approvalid": "001",
+        "siteid": "001"
+      },
+      "properties": {
+        "privateLinkServiceConnections": [
+          {
+            "name": "[concat(parameters('privateEndpoints_stg_pe_blob_id001_s031_name'), '_76a7c31d-7b46-49b4-8e55-3fb8a89aa175')]",
+            "id": "[concat(resourceId('Microsoft.Network/privateEndpoints', parameters('privateEndpoints_stg_pe_blob_id001_s031_name')), concat('/privateLinkServiceConnections/', parameters('privateEndpoints_stg_pe_blob_id001_s031_name'), '_76a7c31d-7b46-49b4-8e55-3fb8a89aa175'))]",
+            "properties": {
+              "privateLinkServiceId": "[parameters('storageAccounts_stgid001s030_externalid')]",
+              "groupIds": [
+                "blob"
+              ],
+              "privateLinkServiceConnectionState": {
+                "status": "Disconnected",
+                "description": "storage account being deleted",
+                "actionsRequired": "None"
+              }
+            }
+          }
+        ],
+        "manualPrivateLinkServiceConnections": [],
+        "subnet": {
+          "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/snet-stg-id001-s013')]"
+        },
+        "ipConfigurations": [],
+        "customDnsConfigs": []
+      }
+    }
+  ]
+}

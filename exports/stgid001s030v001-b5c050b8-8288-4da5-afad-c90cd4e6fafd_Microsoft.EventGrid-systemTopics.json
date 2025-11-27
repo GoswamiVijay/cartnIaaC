@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "systemTopics_stgid001s030v001_b5c050b8_8288_4da5_afad_c90cd4e6fafd_name": {
+      "defaultValue": "stgid001s030v001-b5c050b8-8288-4da5-afad-c90cd4e6fafd",
+      "type": "String"
+    },
+    "storageaccounts_stgid001s030v001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.storage/storageaccounts/stgid001s030v001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.EventGrid/systemTopics",
+      "apiVersion": "2025-04-01-preview",
+      "name": "[parameters('systemTopics_stgid001s030v001_b5c050b8_8288_4da5_afad_c90cd4e6fafd_name')]",
+      "location": "eastus2",
+      "properties": {
+        "source": "[parameters('storageaccounts_stgid001s030v001_externalid')]",
+        "topicType": "microsoft.storage.storageaccounts"
+      }
+    },
+    {
+      "type": "Microsoft.EventGrid/systemTopics/eventSubscriptions",
+      "apiVersion": "2025-04-01-preview",
+      "name": "[concat(parameters('systemTopics_stgid001s030v001_b5c050b8_8288_4da5_afad_c90cd4e6fafd_name'), '/StorageAntimalwareSubscription')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.EventGrid/systemTopics', parameters('systemTopics_stgid001s030v001_b5c050b8_8288_4da5_afad_c90cd4e6fafd_name'))]"
+      ],
+      "properties": {
+        "destination": {
+          "properties": {
+            "maxEventsPerBatch": 1,
+            "preferredBatchSizeInKilobytes": 64,
+            "azureActiveDirectoryTenantId": "33e01921-4d64-4f8c-a055-5bdaffd5e33d",
+            "azureActiveDirectoryApplicationIdOrUri": "f1f8da5f-609a-401d-85b2-d498116b7265"
+          },
+          "endpointType": "WebHook"
+        },
+        "filter": {
+          "includedEventTypes": [
+            "Microsoft.Storage.BlobCreated",
+            "Microsoft.Storage.BlobRenamed"
+          ],
+          "advancedFilters": [
+            {
+              "values": [
+                "BlockBlob"
+              ],
+              "operatorType": "StringContains",
+              "key": "data.blobType"
+            }
+          ]
+        },
+        "eventDeliverySchema": "EventGridSchema",
+        "retryPolicy": {
+          "maxDeliveryAttempts": 30,
+          "eventTimeToLiveInMinutes": 1440
+        }
+      }
+    }
+  ]
+}

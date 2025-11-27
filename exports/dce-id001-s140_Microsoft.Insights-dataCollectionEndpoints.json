@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dataCollectionEndpoints_dce_id001_s140_name": {
+      "defaultValue": "dce-id001-s140",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Insights/dataCollectionEndpoints",
+      "apiVersion": "2023-03-11",
+      "name": "[parameters('dataCollectionEndpoints_dce_id001_s140_name')]",
+      "location": "eastus",
+      "tags": {
+        "approvalid": "001",
+        "cartncomponent": "monitoring",
+        "customer": "DOS-CA",
+        "customerid": "001",
+        "environment": "production",
+        "environmentId": "001",
+        "site": "npc",
+        "siteid": "001",
+        "ticketId": "001"
+      },
+      "properties": {
+        "immutableId": "dce-3639eb2850054d6386768964579cb86f",
+        "configurationAccess": {},
+        "logsIngestion": {},
+        "metricsIngestion": {},
+        "networkAcls": {
+          "publicNetworkAccess": "Enabled"
+        }
+      }
+    }
+  ]
+}

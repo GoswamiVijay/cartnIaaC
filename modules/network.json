@@ -1,0 +1,53 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2024-07-01",
+      "name": "vnet-id001-s001",
+      "location": "[parameters('location')]",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environment": "production",
+        "customerid": "001",
+        "siteid": "001",
+        "ticketId": "001",
+        "approvalid": "001"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/19"
+          ]
+        },
+        "encryption": {
+          "enabled": false,
+          "enforcement": "AllowUnencrypted"
+        },
+        "subnets": [
+          { "name": "default", "properties": { "addressPrefixes": [ "10.0.0.0/24" ] } },
+          { "name": "AzureFirewallSubnet", "properties": { "addressPrefixes": [ "10.0.1.64/26" ] } },
+          { "name": "AzureFirewallManagementSubnet", "properties": { "addressPrefixes": [ "10.0.1.128/26" ] } },
+          { "name": "AzureBastionSubnet", "properties": { "addressPrefixes": [ "10.0.1.0/26" ] } },
+          { "name": "snet-db-id001-s011", "properties": { "addressPrefixes": [ "10.0.6.0/24" ] } },
+          { "name": "snet-stg-id001-s013", "properties": { "addressPrefixes": [ "10.0.8.0/24" ] } },
+          { "name": "snet-appgtw-id001-s014", "properties": { "addressPrefixes": [ "10.0.9.0/24" ] } },
+          { "name": "snet-qpui-id001-s007", "properties": { "addressPrefixes": [ "10.0.2.0/24" ] } },
+          { "name": "snet-qpapi-id001-s008", "properties": { "addressPrefixes": [ "10.0.3.0/24" ] } },
+          { "name": "snet-api-id001-s009", "properties": { "addressPrefixes": [ "10.0.4.0/24" ] } },
+          { "name": "snet-ingsvc-id001-s010", "properties": { "addressPrefixes": [ "10.0.5.0/24" ] } },
+          { "name": "snet-svc-id001-s012", "properties": { "addressPrefixes": [ "10.0.7.0/24" ] } }
+        ],
+        "enableDdosProtection": false
+      }
+    }
+  ]
+}

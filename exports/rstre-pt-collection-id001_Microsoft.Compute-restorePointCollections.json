@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "restorePointCollections_rstre_pt_collection_id001_name": {
+      "defaultValue": "rstre-pt-collection-id001",
+      "type": "String"
+    },
+    "virtualMachines_vmdbid002_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Compute/virtualMachines/vmdbid002",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Compute/restorePointCollections",
+      "apiVersion": "2024-11-01",
+      "name": "[parameters('restorePointCollections_rstre_pt_collection_id001_name')]",
+      "location": "eastus2",
+      "properties": {
+        "source": {
+          "id": "[parameters('virtualMachines_vmdbid002_externalid')]"
+        }
+      }
+    }
+  ]
+}

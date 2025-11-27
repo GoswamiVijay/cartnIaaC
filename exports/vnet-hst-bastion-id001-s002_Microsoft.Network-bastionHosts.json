@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "bastionHosts_vnet_hst_bastion_id001_s002_name": {
+      "defaultValue": "vnet-hst-bastion-id001-s002",
+      "type": "String"
+    },
+    "publicIPAddresses_vnet_pip_bastion_id001_s003_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-pip-bastion-id001-s003",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/bastionHosts",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('bastionHosts_vnet_hst_bastion_id001_s002_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environment": "production",
+        "customerid": "001",
+        "siteid": "001",
+        "ticketId": "001",
+        "approvalid": "001"
+      },
+      "sku": {
+        "name": "Basic"
+      },
+      "properties": {
+        "dnsName": "bst-51e0745b-d3f5-49ff-ad4d-be0cfe31f672.bastion.azure.com",
+        "scaleUnits": 2,
+        "ipConfigurations": [
+          {
+            "name": "IpConf",
+            "id": "[concat(resourceId('Microsoft.Network/bastionHosts', parameters('bastionHosts_vnet_hst_bastion_id001_s002_name')), '/bastionHostIpConfigurations/IpConf')]",
+            "properties": {
+              "privateIPAllocationMethod": "Dynamic",
+              "publicIPAddress": {
+                "id": "[parameters('publicIPAddresses_vnet_pip_bastion_id001_s003_externalid')]"
+              },
+              "subnet": {
+                "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/AzureBastionSubnet')]"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,229 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "automations_ExportToWorkspace_name": {
+      "defaultValue": "ExportToWorkspace",
+      "type": "String"
+    },
+    "workspaces_law_id001_s110_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.operationalinsights/workspaces/law-id001-s110",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Security/automations",
+      "apiVersion": "2023-12-01-preview",
+      "name": "[parameters('automations_ExportToWorkspace_name')]",
+      "location": "eastus2",
+      "properties": {
+        "isEnabled": true,
+        "scopes": [
+          {
+            "description": "scope for subscription b08e63b8-3e0b-4003-ba71-b4413106512a",
+            "scopePath": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a"
+          }
+        ],
+        "sources": [
+          {
+            "eventSource": "Assessments",
+            "ruleSets": [
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "type",
+                    "propertyType": "String",
+                    "expectedValue": "Microsoft.Security/assessments",
+                    "operator": "Contains"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "eventSource": "AssessmentsSnapshot",
+            "ruleSets": [
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "type",
+                    "propertyType": "String",
+                    "expectedValue": "Microsoft.Security/assessments",
+                    "operator": "Contains"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "eventSource": "SubAssessments"
+          },
+          {
+            "eventSource": "SubAssessmentsSnapshot"
+          },
+          {
+            "eventSource": "Alerts",
+            "ruleSets": [
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "Severity",
+                    "propertyType": "String",
+                    "expectedValue": "low",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "Severity",
+                    "propertyType": "String",
+                    "expectedValue": "medium",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "Severity",
+                    "propertyType": "String",
+                    "expectedValue": "high",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "Severity",
+                    "propertyType": "String",
+                    "expectedValue": "informational",
+                    "operator": "Equals"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "eventSource": "AttackPathsSnapshot",
+            "ruleSets": [
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Low",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Medium",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "High",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Critical",
+                    "operator": "Equals"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "eventSource": "AttackPaths",
+            "ruleSets": [
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Low",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Medium",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "High",
+                    "operator": "Equals"
+                  }
+                ]
+              },
+              {
+                "rules": [
+                  {
+                    "propertyJPath": "attackPath.riskLevel",
+                    "propertyType": "String",
+                    "expectedValue": "Critical",
+                    "operator": "Equals"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "eventSource": "SecureScores"
+          },
+          {
+            "eventSource": "SecureScoresSnapshot"
+          },
+          {
+            "eventSource": "SecureScoreControls"
+          },
+          {
+            "eventSource": "SecureScoreControlsSnapshot"
+          },
+          {
+            "eventSource": "RegulatoryComplianceAssessment"
+          },
+          {
+            "eventSource": "RegulatoryComplianceAssessmentSnapshot"
+          }
+        ],
+        "actions": [
+          {
+            "workspaceResourceId": "[parameters('workspaces_law_id001_s110_externalid')]",
+            "actionType": "Workspace"
+          }
+        ]
+      }
+    }
+  ]
+}

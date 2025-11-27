@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dataCollectionRules_MSVMI_eastus2_vmdbid002_name": {
+      "defaultValue": "MSVMI-eastus2-vmdbid002",
+      "type": "String"
+    },
+    "workspaces_law_id001_s110_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.operationalinsights/workspaces/law-id001-s110",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Insights/dataCollectionRules",
+      "apiVersion": "2023-03-11",
+      "name": "[parameters('dataCollectionRules_MSVMI_eastus2_vmdbid002_name')]",
+      "location": "eastus2",
+      "kind": "Linux",
+      "properties": {
+        "dataSources": {
+          "performanceCounters": [
+            {
+              "streams": [
+                "Microsoft-InsightsMetrics"
+              ],
+              "samplingFrequencyInSeconds": 60,
+              "counterSpecifiers": [
+                "\\VmInsights\\DetailedMetrics"
+              ],
+              "name": "Microsoft-InsightsMetrics"
+            }
+          ]
+        },
+        "destinations": {
+          "logAnalytics": [
+            {
+              "workspaceResourceId": "[parameters('workspaces_law_id001_s110_externalid')]",
+              "name": "vmInsightworkspace"
+            }
+          ]
+        },
+        "dataFlows": [
+          {
+            "streams": [
+              "Microsoft-InsightsMetrics"
+            ],
+            "destinations": [
+              "vmInsightworkspace"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

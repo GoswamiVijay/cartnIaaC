@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "solutions_ChangeTracking_law_id001_s110__name": {
+      "defaultValue": "ChangeTracking(law-id001-s110)",
+      "type": "String"
+    },
+    "workspaces_law_id001_s110_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.OperationalInsights/workspaces/law-id001-s110",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.OperationsManagement/solutions",
+      "apiVersion": "2015-11-01-preview",
+      "name": "[parameters('solutions_ChangeTracking_law_id001_s110__name')]",
+      "location": "eastus2",
+      "plan": {
+        "name": "ChangeTracking(law-id001-s110)",
+        "promotionCode": "",
+        "product": "OMSGallery/ChangeTracking",
+        "publisher": "Microsoft"
+      },
+      "properties": {
+        "workspaceResourceId": "[parameters('workspaces_law_id001_s110_externalid')]",
+        "containedResources": [
+          "[concat(parameters('workspaces_law_id001_s110_externalid'), concat('/views/', parameters('solutions_ChangeTracking_law_id001_s110__name')))]"
+        ]
+      }
+    }
+  ]
+}

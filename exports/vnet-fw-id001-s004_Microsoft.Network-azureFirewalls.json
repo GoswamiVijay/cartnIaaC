@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "azureFirewalls_vnet_fw_id001_s004_name": {
+      "defaultValue": "vnet-fw-id001-s004",
+      "type": "String"
+    },
+    "publicIPAddresses_vnet_id001_s001_traffic_management_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-id001-s001-traffic-management",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    },
+    "publicIPAddresses_vnet_fw_pip_id001_s006_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/publicIPAddresses/vnet-fw-pip-id001-s006",
+      "type": "String"
+    },
+    "firewallPolicies_vnet_fw_policy_id001_s005_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/firewallPolicies/vnet-fw-policy-id001-s005",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/azureFirewalls",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('azureFirewalls_vnet_fw_id001_s004_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environment": "production",
+        "customerid": "001",
+        "siteid": "001",
+        "ticketId": "001",
+        "approvalid": "001"
+      },
+      "properties": {
+        "sku": {
+          "name": "AZFW_VNet",
+          "tier": "Basic"
+        },
+        "threatIntelMode": "Alert",
+        "additionalProperties": {},
+        "managementIpConfiguration": {
+          "name": "managementIpConfig",
+          "id": "[concat(resourceId('Microsoft.Network/azureFirewalls', parameters('azureFirewalls_vnet_fw_id001_s004_name')), '/azureFirewallIpConfigurations/managementIpConfig')]",
+          "properties": {
+            "publicIPAddress": {
+              "id": "[parameters('publicIPAddresses_vnet_id001_s001_traffic_management_externalid')]"
+            },
+            "subnet": {
+              "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/AzureFirewallManagementSubnet')]"
+            }
+          }
+        },
+        "ipConfigurations": [
+          {
+            "name": "ipConfig",
+            "id": "[concat(resourceId('Microsoft.Network/azureFirewalls', parameters('azureFirewalls_vnet_fw_id001_s004_name')), '/azureFirewallIpConfigurations/ipConfig')]",
+            "properties": {
+              "publicIPAddress": {
+                "id": "[parameters('publicIPAddresses_vnet_fw_pip_id001_s006_externalid')]"
+              },
+              "subnet": {
+                "id": "[concat(parameters('virtualNetworks_vnet_id001_s001_externalid'), '/subnets/AzureFirewallSubnet')]"
+              }
+            }
+          }
+        ],
+        "networkRuleCollections": [],
+        "applicationRuleCollections": [],
+        "natRuleCollections": [],
+        "firewallPolicy": {
+          "id": "[parameters('firewallPolicies_vnet_fw_policy_id001_s005_externalid')]"
+        }
+      }
+    }
+  ]
+}

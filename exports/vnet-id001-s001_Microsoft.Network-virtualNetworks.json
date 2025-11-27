@@ -1,0 +1,982 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualNetworks_vnet_id001_s001_name": {
+      "defaultValue": "vnet-id001-s001",
+      "type": "String"
+    },
+    "networkSecurityGroups_snet_sg_qpui_id001_s007_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/networkSecurityGroups/snet-sg-qpui-id001-s007",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('virtualNetworks_vnet_id001_s001_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environment": "production",
+        "customerid": "001",
+        "siteid": "001",
+        "ticketId": "001",
+        "approvalid": "001"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": [
+            "10.0.0.0/19"
+          ]
+        },
+        "encryption": {
+          "enabled": false,
+          "enforcement": "AllowUnencrypted"
+        },
+        "privateEndpointVNetPolicies": "Disabled",
+        "subnets": [
+          {
+            "name": "default",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'default')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.0.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "AzureFirewallSubnet",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'AzureFirewallSubnet')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.1.64/26"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-db-id001-s011",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-db-id001-s011')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.6.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-stg-id001-s013",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-stg-id001-s013')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.8.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-appgtw-id001-s014",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-appgtw-id001-s014')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.9.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "AzureBastionSubnet",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'AzureBastionSubnet')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.1.0/26"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-qpapi-id001-s008",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-qpapi-id001-s008')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.3.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [
+                {
+                  "name": "delegation",
+                  "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-qpapi-id001-s008'), '/delegations/delegation')]",
+                  "properties": {
+                    "serviceName": "Microsoft.Web/serverfarms"
+                  },
+                  "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+                }
+              ],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-api-id001-s009",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-api-id001-s009')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.4.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [
+                {
+                  "name": "delegation",
+                  "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-api-id001-s009'), '/delegations/delegation')]",
+                  "properties": {
+                    "serviceName": "Microsoft.Web/serverfarms"
+                  },
+                  "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+                }
+              ],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-ingsvc-id001-s010",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-ingsvc-id001-s010')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.5.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [
+                {
+                  "name": "delegation",
+                  "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-ingsvc-id001-s010'), '/delegations/delegation')]",
+                  "properties": {
+                    "serviceName": "Microsoft.Web/serverfarms"
+                  },
+                  "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+                }
+              ],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-qpui-id001-s007",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-qpui-id001-s007')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.2.0/24"
+              ],
+              "networkSecurityGroup": {
+                "id": "[parameters('networkSecurityGroups_snet_sg_qpui_id001_s007_externalid')]"
+              },
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Web",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "snet-svc-id001-s012",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-svc-id001-s012')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.7.0/24"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.Sql",
+                  "locations": [
+                    "eastus2"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                },
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          },
+          {
+            "name": "AzureFirewallManagementSubnet",
+            "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'AzureFirewallManagementSubnet')]",
+            "properties": {
+              "addressPrefixes": [
+                "10.0.1.128/26"
+              ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                },
+                {
+                  "service": "Microsoft.Storage",
+                  "locations": [
+                    "eastus2",
+                    "centralus"
+                  ]
+                }
+              ],
+              "delegations": [],
+              "privateEndpointNetworkPolicies": "Disabled",
+              "privateLinkServiceNetworkPolicies": "Enabled"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets"
+          }
+        ],
+        "virtualNetworkPeerings": [],
+        "enableDdosProtection": false
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/AzureBastionSubnet')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.1.0/26"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/AzureFirewallManagementSubnet')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.1.128/26"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/AzureFirewallSubnet')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.1.64/26"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/default')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.0.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-api-id001-s009')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.4.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [
+          {
+            "name": "delegation",
+            "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-api-id001-s009'), '/delegations/delegation')]",
+            "properties": {
+              "serviceName": "Microsoft.Web/serverfarms"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+          }
+        ],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-appgtw-id001-s014')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.9.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-db-id001-s011')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.6.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-ingsvc-id001-s010')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.5.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [
+          {
+            "name": "delegation",
+            "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-ingsvc-id001-s010'), '/delegations/delegation')]",
+            "properties": {
+              "serviceName": "Microsoft.Web/serverfarms"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+          }
+        ],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-qpapi-id001-s008')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.3.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [
+          {
+            "name": "delegation",
+            "id": "[concat(resourceId('Microsoft.Network/virtualNetworks/subnets', parameters('virtualNetworks_vnet_id001_s001_name'), 'snet-qpapi-id001-s008'), '/delegations/delegation')]",
+            "properties": {
+              "serviceName": "Microsoft.Web/serverfarms"
+            },
+            "type": "Microsoft.Network/virtualNetworks/subnets/delegations"
+          }
+        ],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-qpui-id001-s007')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.2.0/24"
+        ],
+        "networkSecurityGroup": {
+          "id": "[parameters('networkSecurityGroups_snet_sg_qpui_id001_s007_externalid')]"
+        },
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-stg-id001-s013')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.8.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Web",
+            "locations": [
+              "*"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "NetworkSecurityGroupEnabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks/subnets",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('virtualNetworks_vnet_id001_s001_name'), '/snet-svc-id001-s012')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/virtualNetworks', parameters('virtualNetworks_vnet_id001_s001_name'))]"
+      ],
+      "properties": {
+        "addressPrefixes": [
+          "10.0.7.0/24"
+        ],
+        "serviceEndpoints": [
+          {
+            "service": "Microsoft.Sql",
+            "locations": [
+              "eastus2"
+            ]
+          },
+          {
+            "service": "Microsoft.Storage",
+            "locations": [
+              "eastus2",
+              "centralus"
+            ]
+          },
+          {
+            "service": "Microsoft.KeyVault",
+            "locations": [
+              "*"
+            ]
+          }
+        ],
+        "delegations": [],
+        "privateEndpointNetworkPolicies": "Disabled",
+        "privateLinkServiceNetworkPolicies": "Enabled"
+      }
+    }
+  ]
+}

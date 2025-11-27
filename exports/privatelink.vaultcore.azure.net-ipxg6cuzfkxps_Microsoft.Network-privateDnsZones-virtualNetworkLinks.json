@@ -1,0 +1,30 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "privateDnsZones_privatelink_vaultcore_azure_net_name": {
+      "defaultValue": "privatelink.vaultcore.azure.net",
+      "type": "String"
+    },
+    "virtualNetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/Microsoft.Network/virtualNetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
+      "apiVersion": "2024-06-01",
+      "name": "[concat(parameters('privateDnsZones_privatelink_vaultcore_azure_net_name'), '/ipxg6cuzfkxps')]",
+      "location": "global",
+      "properties": {
+        "registrationEnabled": false,
+        "resolutionPolicy": "Default",
+        "virtualNetwork": {
+          "id": "[parameters('virtualNetworks_vnet_id001_s001_externalid')]"
+        }
+      }
+    }
+  ]
+}

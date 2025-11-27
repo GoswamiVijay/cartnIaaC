@@ -1,0 +1,2734 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "automationAccounts_aa_act_id001_19_name": {
+      "defaultValue": "aa-act-id001-19",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Automation/automationAccounts",
+      "apiVersion": "2024-10-23",
+      "name": "[parameters('automationAccounts_aa_act_id001_19_name')]",
+      "location": "eastus2",
+      "identity": {
+        "type": "SystemAssigned"
+      },
+      "properties": {
+        "publicNetworkAccess": true,
+        "disableLocalAuth": false,
+        "sku": {
+          "name": "Basic"
+        },
+        "encryption": {
+          "keySource": "Microsoft.Automation",
+          "identity": {}
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Azure')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "isGlobal": true,
+        "fieldDefinitions": {
+          "AutomationCertificateName": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "SubscriptionID": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureClassicCertificate')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "isGlobal": true,
+        "fieldDefinitions": {
+          "SubscriptionName": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "SubscriptionId": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "CertificateAssetName": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/connectionTypes",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureServicePrincipal')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "isGlobal": true,
+        "fieldDefinitions": {
+          "ApplicationId": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "TenantId": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "CertificateThumbprint": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          },
+          "SubscriptionId": {
+            "isEncrypted": false,
+            "isOptional": false,
+            "type": "System.String"
+          }
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AuditPolicyDsc')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Accounts')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Advisor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Aks')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.AnalysisServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ApiManagement')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.App')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.AppConfiguration')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ApplicationInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ArcResourceBridge')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Attestation')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Automanage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Automation')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Batch')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Billing')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Cdn')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CloudService')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CognitiveServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Compute')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ConfidentialLedger')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ContainerInstance')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ContainerRegistry')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CosmosDB')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataBoxEdge')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Databricks')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataFactory')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataLakeAnalytics')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataLakeStore')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataProtection')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataShare')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DeploymentManager')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DesktopVirtualization')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DevCenter')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DevTestLabs')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Dns')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.EventGrid')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.EventHub')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.FrontDoor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Functions')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.HDInsight')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.HealthcareApis')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.IotHub')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.KeyVault')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Kusto')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.LoadTesting')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.LogicApp')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MachineLearning')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MachineLearningServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Maintenance')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ManagedServiceIdentity')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ManagedServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MarketplaceOrdering')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Media')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Migrate')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Monitor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MySql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Network')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.NetworkCloud')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.NotificationHubs')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.OperationalInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PolicyInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PostgreSql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PowerBIEmbedded')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PrivateDns')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RecoveryServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RedisCache')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RedisEnterpriseCache')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Relay')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ResourceMover')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Resources')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Security')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SecurityInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ServiceBus')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ServiceFabric')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SignalR')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Sql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SqlVirtualMachine')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StackHCI')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Storage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StorageMover')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StorageSync')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StreamAnalytics')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Support')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Synapse')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.TrafficManager')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Websites')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Azure')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Azure.Storage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Automation')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Compute')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Profile')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Resources')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Sql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureRM.Storage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/ComputerManagementDsc')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/GPRegistryPolicyParser')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.PowerShell.Core')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.PowerShell.Diagnostics')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.PowerShell.Management')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.PowerShell.Security')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.PowerShell.Utility')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Microsoft.WSMan.Management')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Orchestrator.AssetManagement.Cmdlets')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PSDscResources')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/SecurityPolicyDsc')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/StateConfigCompositeResources')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/xDSCDomainjoin')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/xPowerShellExecutionPolicy')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/xRemoteDesktopAdmin')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Accounts')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Advisor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Aks')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.AnalysisServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ApiManagement')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.App')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.AppConfiguration')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ApplicationInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ArcResourceBridge')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Attestation')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Automanage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Automation')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Batch')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Billing')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Cdn')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CloudService')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CognitiveServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Compute')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ConfidentialLedger')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ContainerInstance')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ContainerRegistry')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.CosmosDB')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataBoxEdge')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Databricks')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataFactory')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataLakeAnalytics')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataLakeStore')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataProtection')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DataShare')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DeploymentManager')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DesktopVirtualization')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DevCenter')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.DevTestLabs')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Dns')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.EventGrid')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.EventHub')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.FrontDoor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Functions')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.HDInsight')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.HealthcareApis')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.IotHub')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.KeyVault')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Kusto')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.LoadTesting')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.LogicApp')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MachineLearning')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MachineLearningServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Maintenance')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ManagedServiceIdentity')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ManagedServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MarketplaceOrdering')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Media')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Migrate')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Monitor')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.MySql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Network')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.NetworkCloud')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.NotificationHubs')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.OperationalInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PolicyInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PostgreSql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PowerBIEmbedded')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.PrivateDns')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RecoveryServices')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RedisCache')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.RedisEnterpriseCache')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Relay')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ResourceMover')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Resources')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Security')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SecurityInsights')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ServiceBus')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.ServiceFabric')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SignalR')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Sql')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.SqlVirtualMachine')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StackHCI')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Storage')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StorageMover')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StorageSync')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.StreamAnalytics')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Support')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Synapse')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.TrafficManager')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/powerShell72Modules",
+      "apiVersion": "2023-11-01",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Az.Websites')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runbooks",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureAutomationTutorialWithIdentity')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runbookType": "PowerShell",
+        "logVerbose": false,
+        "logProgress": false,
+        "logActivityTrace": 0
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runbooks",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/AzureAutomationTutorialWithIdentityGraphical')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runbookType": "GraphPowerShell",
+        "logVerbose": false,
+        "logProgress": false,
+        "logActivityTrace": 0
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "PowerShell",
+          "version": "5.1"
+        },
+        "defaultPackages": {
+          "az": "11.2.0"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: PowerShell & Runtime version: 5.1. It automatically populates Packages defined for PowerShell 5.1 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-7.1')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "PowerShell",
+          "version": "7.1"
+        },
+        "defaultPackages": {
+          "az": "8.0.0"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: PowerShell & Runtime version: 7.1. It automatically populates Packages defined for PowerShell 7.1 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-7.2')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "PowerShell",
+          "version": "7.2"
+        },
+        "defaultPackages": {
+          "az": "11.2.0",
+          "azure cli": "2.56.0"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: PowerShell & Runtime version: 7.2. It automatically populates Packages defined for PowerShell 7.2 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Python-2.7')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "Python",
+          "version": "2.7"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: Python & Runtime version: 2.7. It automatically populates Packages defined for Python 2.7 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Python-3.10')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "Python",
+          "version": "3.10"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: Python & Runtime version: 3.10. It automatically populates Packages defined for Python 3.10 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/Python-3.8')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "runtime": {
+          "language": "Python",
+          "version": "3.8"
+        },
+        "description": "System-generated Runtime Environment for your Automation account with Runtime language: Python & Runtime version: 3.8. It automatically populates Packages defined for Python 3.8 runtime version in your Automation account. This Runtime environment is non-editable. "
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AuditPolicyDsc')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Azure')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Azure.Storage')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Automation')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Compute')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Profile')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Resources')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Sql')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/AzureRM.Storage')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/ComputerManagementDsc')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/GPRegistryPolicyParser')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.PowerShell.Core')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.PowerShell.Diagnostics')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.PowerShell.Management')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.PowerShell.Security')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.PowerShell.Utility')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Microsoft.WSMan.Management')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/Orchestrator.AssetManagement.Cmdlets')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-7.1/Orchestrator.AssetManagement.Cmdlets')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-7.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/PSDscResources')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/SecurityPolicyDsc')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/StateConfigCompositeResources')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/xDSCDomainjoin')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/xPowerShellExecutionPolicy')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runtimeEnvironments/packages",
+      "apiVersion": "2024-10-23",
+      "name": "[concat(parameters('automationAccounts_aa_act_id001_19_name'), '/PowerShell-5.1/xRemoteDesktopAdmin')]",
+      "location": "eastus2",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runtimeEnvironments', parameters('automationAccounts_aa_act_id001_19_name'), 'PowerShell-5.1')]",
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccounts_aa_act_id001_19_name'))]"
+      ],
+      "properties": {
+        "contentLink": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "ddosProtectionPlans_vnet_ddosp_id001_s015_name": {
+      "defaultValue": "vnet-ddosp-id001-s015",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/ddosProtectionPlans",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('ddosProtectionPlans_vnet_ddosp_id001_s015_name')]",
+      "location": "eastus2",
+      "tags": {
+        "customer": "DOS-CA",
+        "site": "npc",
+        "environment": "production",
+        "customerid": "001",
+        "siteid": "001",
+        "ticketId": "001",
+        "approvalid": "001"
+      },
+      "properties": {}
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "networkSecurityGroups_vmdbid002_nsg_name": {
+      "defaultValue": "vmdbid002-nsg",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2024-07-01",
+      "name": "[parameters('networkSecurityGroups_vmdbid002_nsg_name')]",
+      "location": "eastus2",
+      "properties": {
+        "securityRules": [
+          {
+            "name": "MicrosoftDefenderForCloud-JITRule_-1047877347_9B2F355AFBF241CEBA9615F4C2143848",
+            "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_vmdbid002_nsg_name'), 'MicrosoftDefenderForCloud-JITRule_-1047877347_9B2F355AFBF241CEBA9615F4C2143848')]",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "properties": {
+              "description": "MDC JIT Network Access rule for policy 'default' of VM 'vmdbid002'.",
+              "protocol": "*",
+              "sourcePortRange": "*",
+              "destinationPortRange": "6516",
+              "sourceAddressPrefix": "*",
+              "destinationAddressPrefix": "10.0.6.4",
+              "access": "Deny",
+              "priority": 4096,
+              "direction": "Inbound",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          },
+          {
+            "name": "allow_rdp_frm_bastion",
+            "id": "[resourceId('Microsoft.Network/networkSecurityGroups/securityRules', parameters('networkSecurityGroups_vmdbid002_nsg_name'), 'allow_rdp_frm_bastion')]",
+            "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+            "properties": {
+              "description": "Allow RDP connections from Bastion",
+              "protocol": "TCP",
+              "sourcePortRange": "*",
+              "destinationPortRange": "3389",
+              "sourceAddressPrefix": "10.0.0.0/19",
+              "destinationAddressPrefix": "*",
+              "access": "Allow",
+              "priority": 1000,
+              "direction": "Inbound",
+              "sourcePortRanges": [],
+              "destinationPortRanges": [],
+              "sourceAddressPrefixes": [],
+              "destinationAddressPrefixes": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('networkSecurityGroups_vmdbid002_nsg_name'), '/allow_rdp_frm_bastion')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_vmdbid002_nsg_name'))]"
+      ],
+      "properties": {
+        "description": "Allow RDP connections from Bastion",
+        "protocol": "TCP",
+        "sourcePortRange": "*",
+        "destinationPortRange": "3389",
+        "sourceAddressPrefix": "10.0.0.0/19",
+        "destinationAddressPrefix": "*",
+        "access": "Allow",
+        "priority": 1000,
+        "direction": "Inbound",
+        "sourcePortRanges": [],
+        "destinationPortRanges": [],
+        "sourceAddressPrefixes": [],
+        "destinationAddressPrefixes": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+      "apiVersion": "2024-07-01",
+      "name": "[concat(parameters('networkSecurityGroups_vmdbid002_nsg_name'), '/MicrosoftDefenderForCloud-JITRule_-1047877347_9B2F355AFBF241CEBA9615F4C2143848')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('networkSecurityGroups_vmdbid002_nsg_name'))]"
+      ],
+      "properties": {
+        "description": "MDC JIT Network Access rule for policy 'default' of VM 'vmdbid002'.",
+        "protocol": "*",
+        "sourcePortRange": "*",
+        "destinationPortRange": "6516",
+        "sourceAddressPrefix": "*",
+        "destinationAddressPrefix": "10.0.6.4",
+        "access": "Deny",
+        "priority": 4096,
+        "direction": "Inbound",
+        "sourcePortRanges": [],
+        "destinationPortRanges": [],
+        "sourceAddressPrefixes": [],
+        "destinationAddressPrefixes": []
+      }
+    }
+  ]
+}

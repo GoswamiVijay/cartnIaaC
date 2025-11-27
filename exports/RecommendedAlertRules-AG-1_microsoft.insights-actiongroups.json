@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "actionGroups_RecommendedAlertRules_AG_1_name": {
+      "defaultValue": "RecommendedAlertRules-AG-1",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "microsoft.insights/actionGroups",
+      "apiVersion": "2024-10-01-preview",
+      "name": "[parameters('actionGroups_RecommendedAlertRules_AG_1_name')]",
+      "location": "Global",
+      "properties": {
+        "groupShortName": "recalert1",
+        "enabled": true,
+        "emailReceivers": [
+          {
+            "name": "Email0_-EmailAction-",
+            "emailAddress": "Vijay@xfinion.com",
+            "useCommonAlertSchema": true
+          }
+        ],
+        "smsReceivers": [],
+        "webhookReceivers": [],
+        "eventHubReceivers": [],
+        "itsmReceivers": [],
+        "azureAppPushReceivers": [],
+        "automationRunbookReceivers": [],
+        "voiceReceivers": [],
+        "logicAppReceivers": [],
+        "azureFunctionReceivers": [],
+        "armRoleReceivers": []
+      }
+    }
+  ]
+}

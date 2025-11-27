@@ -1,0 +1,59 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]"
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/firewallPolicies",
+      "apiVersion": "2024-07-01",
+      "name": "vnet-fw-policy-id001-s005",
+      "location": "[parameters('location')]"
+    },
+    {
+      "type": "Microsoft.Network/azureFirewalls",
+      "apiVersion": "2024-07-01",
+      "name": "vnet-fw-id001-s004",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "vnet-fw-policy-id001-s005"
+      ],
+      "properties": {
+        "firewallPolicy": {
+          "id": "[resourceId('Microsoft.Network/firewallPolicies', 'vnet-fw-policy-id001-s005')]"
+        },
+        "ipConfigurations": [
+          {
+            "name": "azureFirewallIpConfig",
+            "properties": {
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets','vnet-id001-s001','AzureFirewallSubnet')]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses','vnet-fw-pip-id001-s006')]"
+              }
+            }
+          },
+          {
+            "name": "azureFirewallMgmtIpConfig",
+            "properties": {
+              "subnet": {
+                "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets','vnet-id001-s001','AzureFirewallManagementSubnet')]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses','vnet-fw-pip-id001-s006')]"
+              }
+            }
+          }
+        ],
+        "sku": {
+          "tier": "Standard"
+        }
+      }
+    }
+  ]
+}

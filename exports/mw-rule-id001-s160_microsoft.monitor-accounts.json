@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accounts_mw_rule_id001_s160_name": {
+      "defaultValue": "mw-rule-id001-s160",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "microsoft.monitor/accounts",
+      "apiVersion": "2023-04-03",
+      "name": "[parameters('accounts_mw_rule_id001_s160_name')]",
+      "location": "eastus",
+      "tags": {
+        "approvalid": "001",
+        "cartncomponent": "monitoring",
+        "customer": "DOS-CA",
+        "customerid": "001",
+        "environment": "production",
+        "environmentId": "001",
+        "site": "npc",
+        "siteid": "001",
+        "ticketId": "001"
+      },
+      "properties": {
+        "publicNetworkAccess": "Enabled"
+      }
+    }
+  ]
+}

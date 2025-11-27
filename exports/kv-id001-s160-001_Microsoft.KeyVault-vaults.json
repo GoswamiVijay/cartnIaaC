@@ -1,0 +1,124 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vaults_kv_id001_s160_001_name": {
+      "defaultValue": "kv-id001-s160-001",
+      "type": "String"
+    },
+    "virtualnetworks_vnet_id001_s001_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.network/virtualnetworks/vnet-id001-s001",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.KeyVault/vaults",
+      "apiVersion": "2024-12-01-preview",
+      "name": "[parameters('vaults_kv_id001_s160_001_name')]",
+      "location": "eastus",
+      "tags": {
+        "approvalid": "001",
+        "cartncomponent": "infrastructure",
+        "customer": "DOS-CA",
+        "customerid": "001",
+        "environment": "production",
+        "environmentId": "001",
+        "site": "npc",
+        "siteid": "001",
+        "ticketId": "001"
+      },
+      "properties": {
+        "sku": {
+          "family": "A",
+          "name": "Standard"
+        },
+        "tenantId": "5108f34e-9111-4f60-bfc2-e46281215f8a",
+        "networkAcls": {
+          "bypass": "AzureServices",
+          "defaultAction": "Deny",
+          "ipRules": [],
+          "virtualNetworkRules": [
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/default')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/azurefirewallsubnet')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-qpui-id001-s007')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-db-id001-s011')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-svc-id001-s012')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-stg-id001-s013')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-appgtw-id001-s014')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/azurebastionsubnet')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/azurefirewallmanagementsubnet')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-qpapi-id001-s008')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-api-id001-s009')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            },
+            {
+              "id": "[concat(parameters('virtualnetworks_vnet_id001_s001_externalid'), '/subnets/snet-ingsvc-id001-s010')]",
+              "ignoreMissingVnetServiceEndpoint": false
+            }
+          ]
+        },
+        "accessPolicies": [],
+        "enabledForDeployment": true,
+        "enabledForDiskEncryption": true,
+        "enabledForTemplateDeployment": true,
+        "enableSoftDelete": true,
+        "softDeleteRetentionInDays": 90,
+        "enableRbacAuthorization": true,
+        "enablePurgeProtection": true,
+        "vaultUri": "[concat('https://', parameters('vaults_kv_id001_s160_001_name'), '.vault.azure.net/')]",
+        "provisioningState": "Succeeded",
+        "publicNetworkAccess": "Enabled"
+      }
+    },
+    {
+      "type": "Microsoft.KeyVault/vaults/privateEndpointConnections",
+      "apiVersion": "2024-12-01-preview",
+      "name": "[concat(parameters('vaults_kv_id001_s160_001_name'), '/kv-pvt-lnk-id001-s160-001')]",
+      "location": "eastus",
+      "dependsOn": [
+        "[resourceId('Microsoft.KeyVault/vaults', parameters('vaults_kv_id001_s160_001_name'))]"
+      ],
+      "properties": {
+        "provisioningState": "Succeeded",
+        "privateEndpoint": {},
+        "privateLinkServiceConnectionState": {
+          "status": "Approved",
+          "actionsRequired": "None"
+        }
+      }
+    }
+  ]
+}

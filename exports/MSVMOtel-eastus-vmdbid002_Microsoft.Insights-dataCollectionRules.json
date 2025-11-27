@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "dataCollectionRules_MSVMOtel_eastus_vmdbid002_name": {
+      "defaultValue": "MSVMOtel-eastus-vmdbid002",
+      "type": "String"
+    },
+    "accounts_mw_rule_id001_s160_externalid": {
+      "defaultValue": "/subscriptions/b08e63b8-3e0b-4003-ba71-b4413106512a/resourceGroups/rg-id001/providers/microsoft.monitor/accounts/mw-rule-id001-s160",
+      "type": "String"
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Insights/dataCollectionRules",
+      "apiVersion": "2023-03-11",
+      "name": "[parameters('dataCollectionRules_MSVMOtel_eastus_vmdbid002_name')]",
+      "location": "eastus",
+      "kind": "Linux",
+      "properties": {
+        "dataSources": {},
+        "destinations": {
+          "monitoringAccounts": [
+            {
+              "accountResourceId": "[parameters('accounts_mw_rule_id001_s160_externalid')]",
+              "name": "MonitoringAccountDestination"
+            }
+          ]
+        },
+        "dataFlows": [
+          {
+            "streams": [
+              "Microsoft-OtelPerfMetrics"
+            ],
+            "destinations": [
+              "MonitoringAccountDestination"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
